@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 01-12-2022 a las 14:14:29
+-- Tiempo de generación: 27-02-2023 a las 14:40:32
 -- Versión del servidor: 10.5.13-MariaDB-cll-lve
 -- Versión de PHP: 7.2.34
 
@@ -41,7 +41,8 @@ INSERT INTO `area` (`id_area`, `nombre_area`, `estatus_area`) VALUES
 (1, 'RAYOS X', 'ACTIVO'),
 (2, 'MAMOGRAFIA', 'ACTIVO'),
 (4, 'CIRUGIA', 'ACTIVO'),
-(5, 'ODONTOLOGIA', 'ACTIVO');
+(5, 'ODONTOLOGIA', 'ACTIVO'),
+(6, 'TOMOGRAFIA', 'ACTIVO');
 
 -- --------------------------------------------------------
 
@@ -75,7 +76,9 @@ INSERT INTO `ciudad` (`id_ciudad`, `nombre_ciudad`, `estatus_ciudad`) VALUES
 (13, 'VILLETA', 'ACTIVO'),
 (14, 'ZARZAL', 'ACTIVO'),
 (15, 'AGUA DE DIOS', 'ACTIVO'),
-(16, 'IBAGUE', 'ACTIVO');
+(16, 'IBAGUE', 'ACTIVO'),
+(17, 'DUITAMA', 'ACTIVO'),
+(18, 'TUNJA', 'ACTIVO');
 
 -- --------------------------------------------------------
 
@@ -116,7 +119,8 @@ INSERT INTO `cliente` (`id_cliente`, `fecha_reg`, `nombre_rz`, `nit_cliente`, `t
 (12, '2022-09-23 02:12:13', 'PLENISALUD IPS', '901241821-2', '3015943635', 'NA', 'NA', 'CHIQUINQUIRA', 'NA', 'JORGE A. DIAZ H.', 'ACTIVO'),
 (13, '2022-09-24 21:55:21', 'UNIDAD MEDICA CENTRAL', '812004754-1', '3107821831', 'NA', 'NA', 'VILLETA', 'leidy.lozano@umcentralips.com', 'LEIDY LOZANO', 'ACTIVO'),
 (14, '2022-10-20 22:26:34', 'HOSPITAL DEPARTAMENTAL SAN RAFAEL ESE DE ZARZAL', '891900441-1', '2220043', 'NA', 'NA', 'CL 5 6-32 B/SAN RAFAEL', 'NA', 'FERNANDO ANTIA', 'ACTIVO'),
-(15, '2022-11-28 23:40:33', 'EPS SANITAS', '800251440-6', '6466060', 'PRESTACION DE SERVICIOS', '2022NOV', 'BOGOTA', 'camilo.gonzalez@mizarhealth.co', 'CAMILO GOMEZ', 'ACTIVO');
+(15, '2022-11-28 23:40:33', ' EPS SANITAS', '800251440-6', '6466060', 'PRESTACION DE SERVICIOS', '2022NOV', 'BOGOTA', 'camilo.gonzalez@mizarhealth.co', 'CAMILO GOMEZ', 'ACTIVO'),
+(16, '2022-12-05 01:07:15', 'GRUPO AVA LABZELL LIMITADA', '900355962', '3118109444', 'NA', 'NA', 'CARRERA 1F #40-195 OF 311 TUNJA', 'procesosfamedit@fundacionfamedit.com', 'GERMAN CRUZ', 'ACTIVO');
 
 -- --------------------------------------------------------
 
@@ -205,8 +209,18 @@ INSERT INTO `cronograma` (`id`, `inventario`, `titulo`, `fecha_inicio`, `fecha_f
 (63, 3, 'MANTENIMIENTO PREVENTIVO', '2022-11-08 15:00:00', '2022-11-08 16:00:00', NULL, 'MANTENIMIENTO PROGRAMDO', 'PENDIENTE'),
 (64, 4, 'MANTENIMIENTO PREVENTIVO', '2022-11-08 09:00:00', '2022-11-08 12:00:00', NULL, 'MANTENIMIENTO PROGRAMADO', 'FINALIZADO'),
 (65, 34, 'PREVENTIVO', '2022-11-10 12:00:00', '2022-11-10 17:00:00', NULL, 'MANTENIMIENTO PROGRAMADO', 'FINALIZADO'),
-(66, 35, 'CORRECTIVO', '2022-11-23 10:04:00', '2022-11-23 11:00:00', NULL, 'CAMBIO DE CONECTOR', 'PENDIENTE'),
-(67, 36, 'CORRECTIVO', '2022-11-24 12:00:00', '2022-11-24 13:00:00', NULL, 'RETIRO DE REGILLA', 'PENDIENTE');
+(66, 35, 'CORRECTIVO', '2022-11-23 10:04:00', '2022-11-23 11:00:00', NULL, 'CAMBIO DE CONECTOR', 'FINALIZADO'),
+(67, 36, 'CORRECTIVO', '2022-11-24 12:00:00', '2022-11-24 13:00:00', NULL, 'RETIRO DE REGILLA', 'PROCESO'),
+(68, 21, 'MANTENIMIENTO', '2022-11-05 08:00:00', '2022-11-05 10:00:00', NULL, 'MANTENIMIENTO PREVENTIVO', 'FINALIZADO'),
+(69, 37, 'MANTENIMIENTO', '2022-11-26 08:00:00', '2022-11-26 16:00:00', NULL, 'CALIDAD DE IMAGEN', 'FINALIZADO'),
+(70, 7, 'CORRECTIVO', '2022-12-14 14:00:00', '2022-12-14 17:00:00', NULL, 'AVECES NO EMITE RAYO', 'PROCESO'),
+(71, 16, 'CORRECTIVO', '2022-12-15 10:00:00', '2022-12-15 13:00:00', NULL, 'DIANOSTICO', 'PROCESO'),
+(72, 2, 'Mantenimiento Preventivo', '2023-01-19 17:00:00', '2023-01-19 18:00:00', NULL, 'Mantenimiento programado', 'PROCESO'),
+(73, 38, 'CORRECTIVO', '2023-01-12 10:00:00', '2023-01-12 00:00:00', NULL, 'DIAGNOSTICO', 'PROCESO'),
+(74, 39, 'DESISTALACION', '2023-01-19 10:00:00', '2023-01-20 19:00:00', NULL, 'TRASLADO DE EQUIPO', 'PROCESO'),
+(75, 3, 'PREVENTIVO', '2023-02-14 14:00:00', '2023-02-14 16:00:00', NULL, 'MANTENIMIENTO PROGRAMADO', 'PROCESO'),
+(76, 40, 'CORRECTIVO', '2023-02-17 11:00:00', '2023-02-17 12:00:00', NULL, 'RETIRO DE REPUESTO', 'PROCESO'),
+(77, 41, 'CORRECTIVO', '2023-02-21 15:00:00', '2023-02-21 17:00:00', NULL, 'ERROR200', 'PROCESO');
 
 -- --------------------------------------------------------
 
@@ -220,74 +234,92 @@ CREATE TABLE `detalle_reporte` (
   `nombre_cli` varchar(45) NOT NULL,
   `identificacion_cli` varchar(45) NOT NULL,
   `firma_cli` varchar(45) NOT NULL DEFAULT 'NA',
-  `calificacion_servicio` varchar(10) NOT NULL
+  `equipo_oprtvo` varchar(20) NOT NULL,
+  `evidencia_matto1` varchar(40) NOT NULL,
+  `evidencia_matto2` varchar(40) NOT NULL,
+  `evidencia_matto3` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `detalle_reporte`
 --
 
-INSERT INTO `detalle_reporte` (`id_detalle`, `reporte`, `nombre_cli`, `identificacion_cli`, `firma_cli`, `calificacion_servicio`) VALUES
-(1, 1, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '629ec2128f346-firma_aleja_ochoa.png', ''),
-(2, 2, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '629ec50abce16-firma_aleja_ochoa.png', ''),
-(3, 3, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '629ec5d772b8a-firma_aleja_ochoa.png', ''),
-(4, 4, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '629ec6c14e39b-firma_aleja_ochoa.png', ''),
-(5, 5, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a12fd59c954-firma_aleja_ochoa.png', ''),
-(6, 6, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a12ff54f149-firma_aleja_ochoa.png', ''),
-(7, 7, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a1388f6fa7e-firma_aleja_ochoa.png', ''),
-(8, 8, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a138bfd5446-firma_aleja_ochoa.png', ''),
-(9, 9, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a138d8c928a-firma_aleja_ochoa.png', ''),
-(10, 10, 'JOSE DAVID NIÑO', 'NA', '62a14014eefe7-firma_default.png', ''),
-(11, 11, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a140536835e-firma_aleja_ochoa.png', ''),
-(12, 12, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a1406e2b6eb-firma_aleja_ochoa.png', ''),
-(13, 13, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a1408a78d42-firma_aleja_ochoa.png', ''),
-(14, 14, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a140a679805-firma_aleja_ochoa.png', ''),
-(15, 15, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a140bc6f6bb-firma_aleja_ochoa.png', ''),
-(16, 16, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a140eaac5b9-firma_aleja_ochoa.png', ''),
-(17, 17, 'LUZ EVELIA VARGAS', '33646868', '62a14135ae21f-luz_vargas.png', ''),
-(18, 18, 'LUZ EVELIA VARGAS', '33646868', '62a14161e16d3-luz_vargas.png', ''),
-(19, 19, 'LUZ EVELIA VARGAS', '33646868', '62a1417617369-luz_vargas.png', ''),
-(20, 20, 'LUZ EVELIA VARGAS', '33646868', '62a1419356149-luz_vargas.png', ''),
-(21, 21, 'LUZ EVELIA VARGAS', '33646868', '62a141ab44642-luz_vargas.png', ''),
-(22, 22, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a141fed844e-firma_aleja_ochoa.png', ''),
-(23, 23, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a14214ca34f-firma_aleja_ochoa.png', ''),
-(24, 24, 'MARIA EUGENIA MONTERO', '901062680-2', '62a1429fccb83-firma_default.png', ''),
-(25, 25, 'MARIA EUGENIA MONTERO', '901062680-2', '62a142e21aec4-firma_default.png', ''),
-(26, 26, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a1431820557-firma_aleja_ochoa.png', ''),
-(27, 27, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a1432fc409d-firma_aleja_ochoa.png', ''),
-(28, 28, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a143830c69c-firma_aleja_ochoa.png', ''),
-(29, 29, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a143b0a5b12-firma_aleja_ochoa.png', ''),
-(30, 30, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a143c57ccc8-firma_aleja_ochoa.png', ''),
-(31, 31, 'LUIS FERNANDO ANTIA', '1093212147', '62a143fd277a7-firma_default.png', ''),
-(32, 32, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a144150b39c-firma_aleja_ochoa.png', ''),
-(33, 36, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a14c268b1be-firma_aleja_ochoa.png', ''),
-(34, 34, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a14dfeca294-firma_aleja_ochoa.png', ''),
-(35, 35, 'VIVIANA CAROLINA PORTILLA', '1087422827', '62a14e678ab41-firma_default.png', ''),
-(36, 37, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62ac932002b54-firma_aleja_ochoa.png', ''),
-(37, 38, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62ac933b588b4-firma_aleja_ochoa.png', ''),
-(38, 39, 'MARIA EUGENIA MONTERO', '52965905', '62ac99434b143-firma_default.png', ''),
-(39, 40, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62ce0d63cf60e-firma_aleja_ochoa.png', ''),
-(40, 41, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62d9f86feac8e-firma_aleja_ochoa.png', ''),
-(41, 44, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '630abc09461c4-firma_aleja_ochoa.png', ''),
-(42, 45, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '631b7a9e0862a-firma_aleja_ochoa.png', ''),
-(43, 46, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '631b7c486bf92-firma_aleja_ochoa.png', ''),
-(44, 42, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '6321ff3e02e4e-firma_aleja_ochoa.png', ''),
-(45, 43, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '6321ff8518e3b-firma_aleja_ochoa.png', ''),
-(46, 47, 'JORGE ARMANDO DIAZ HERNANDEZ', '1104068388', '632d1af5e9955-firma_default.png', ''),
-(47, 48, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '6331c2f91b7b3-firma_aleja_ochoa.png', ''),
-(48, 49, 'DRA. LEIDY LOZANO QUINTERO', '', '63335b8506d8d-firma_default.png', ''),
-(49, 50, 'DRA. LEIDY LOZANO QUINTERO', '', '63336b43ddd80-firma_default.png', ''),
-(50, 51, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '633f251124fae-firma_aleja_ochoa.png', ''),
-(51, 52, '', '', '6351cfd2dd967-firma_default.png', ''),
-(52, 53, 'ALEJANDRA OCHOA', '1019132020', '635741365feb0-firma_aleja_ochoa.png', ''),
-(53, 54, 'PAOLA ANDREA UYABAN', '1018498576', '63585e57bafa7-1018498576paola.png', ''),
-(54, 55, 'PAOLA ANDREA UYABAN', '1018498576', '63585f59276f9-1018498576paola.png', ''),
-(55, 56, 'LUZ EVELIA VARGAS', '33646868', '636aac1a25aed-luz_vargas.png', ''),
-(56, 57, 'LUZ EVELIA VARGAS', '33646868', '636aadf64c484-luz_vargas.png', ''),
-(57, 58, 'LUZ EVELIA VARGAS', '33646868', '636bd4e106549-33646868luz_vargas.png', ''),
-(58, 59, 'PAOLA ANDREA UYABAN', '1018498576', '636bdf7d5f1a2-1018498576paola.png', ''),
-(59, 60, 'PAOLA ANDREA UYABAN', '1018498576', '636bdf93562d1-1018498576paola.png', ''),
-(60, 61, 'MARIA EUGENIA MONTERO', '', '63782affc833a-firma_default.png', '');
+INSERT INTO `detalle_reporte` (`id_detalle`, `reporte`, `nombre_cli`, `identificacion_cli`, `firma_cli`, `equipo_oprtvo`, `evidencia_matto1`, `evidencia_matto2`, `evidencia_matto3`) VALUES
+(1, 1, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '629ec2128f346-firma_aleja_ochoa.png', 'si', 'NA.png', 'NA.png', 'NA.png'),
+(2, 2, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '629ec50abce16-firma_aleja_ochoa.png', '', '', '', ''),
+(3, 3, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '629ec5d772b8a-firma_aleja_ochoa.png', '', '', '', ''),
+(4, 4, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '629ec6c14e39b-firma_aleja_ochoa.png', '', '', '', ''),
+(5, 5, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a12fd59c954-firma_aleja_ochoa.png', '', '', '', ''),
+(6, 6, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a12ff54f149-firma_aleja_ochoa.png', '', '', '', ''),
+(7, 7, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a1388f6fa7e-firma_aleja_ochoa.png', '', '', '', ''),
+(8, 8, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a138bfd5446-firma_aleja_ochoa.png', '', '', '', ''),
+(9, 9, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a138d8c928a-firma_aleja_ochoa.png', '', '', '', ''),
+(10, 10, 'JOSE DAVID NIÑO', 'NA', '62a14014eefe7-firma_default.png', '', '', '', ''),
+(11, 11, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a140536835e-firma_aleja_ochoa.png', '', '', '', ''),
+(12, 12, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a1406e2b6eb-firma_aleja_ochoa.png', '', '', '', ''),
+(13, 13, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a1408a78d42-firma_aleja_ochoa.png', '', '', '', ''),
+(14, 14, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a140a679805-firma_aleja_ochoa.png', '', '', '', ''),
+(15, 15, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a140bc6f6bb-firma_aleja_ochoa.png', '', '', '', ''),
+(16, 16, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a140eaac5b9-firma_aleja_ochoa.png', '', '', '', ''),
+(17, 17, 'LUZ EVELIA VARGAS', '33646868', '62a14135ae21f-luz_vargas.png', '', '', '', ''),
+(18, 18, 'LUZ EVELIA VARGAS', '33646868', '62a14161e16d3-luz_vargas.png', '', '', '', ''),
+(19, 19, 'LUZ EVELIA VARGAS', '33646868', '62a1417617369-luz_vargas.png', '', '', '', ''),
+(20, 20, 'LUZ EVELIA VARGAS', '33646868', '62a1419356149-luz_vargas.png', '', '', '', ''),
+(21, 21, 'LUZ EVELIA VARGAS', '33646868', '62a141ab44642-luz_vargas.png', '', '', '', ''),
+(22, 22, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a141fed844e-firma_aleja_ochoa.png', '', '', '', ''),
+(23, 23, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a14214ca34f-firma_aleja_ochoa.png', '', '', '', ''),
+(24, 24, 'MARIA EUGENIA MONTERO', '901062680-2', '62a1429fccb83-firma_default.png', '', '', '', ''),
+(25, 25, 'MARIA EUGENIA MONTERO', '901062680-2', '62a142e21aec4-firma_default.png', '', '', '', ''),
+(26, 26, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a1431820557-firma_aleja_ochoa.png', '', '', '', ''),
+(27, 27, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a1432fc409d-firma_aleja_ochoa.png', '', '', '', ''),
+(28, 28, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a143830c69c-firma_aleja_ochoa.png', '', '', '', ''),
+(29, 29, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a143b0a5b12-firma_aleja_ochoa.png', '', '', '', ''),
+(30, 30, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a143c57ccc8-firma_aleja_ochoa.png', '', '', '', ''),
+(31, 31, 'LUIS FERNANDO ANTIA', '1093212147', '62a143fd277a7-firma_default.png', '', '', '', ''),
+(32, 32, ' MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a144150b39c-firma_aleja_ochoa.png', '', '', '', ''),
+(33, 36, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a14c268b1be-firma_aleja_ochoa.png', '', '', '', ''),
+(34, 34, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62a14dfeca294-firma_aleja_ochoa.png', '', '', '', ''),
+(35, 35, 'VIVIANA CAROLINA PORTILLA', '1087422827', '62a14e678ab41-firma_default.png', '', '', '', ''),
+(36, 37, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62ac932002b54-firma_aleja_ochoa.png', '', '', '', ''),
+(37, 38, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62ac933b588b4-firma_aleja_ochoa.png', '', '', '', ''),
+(38, 39, 'MARIA EUGENIA MONTERO', '52965905', '62ac99434b143-firma_default.png', '', '', '', ''),
+(39, 40, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62ce0d63cf60e-firma_aleja_ochoa.png', '', '', '', ''),
+(40, 41, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '62d9f86feac8e-firma_aleja_ochoa.png', '', '', '', ''),
+(41, 44, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '630abc09461c4-firma_aleja_ochoa.png', '', '', '', ''),
+(42, 45, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '631b7a9e0862a-firma_aleja_ochoa.png', '', '', '', ''),
+(43, 46, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '631b7c486bf92-firma_aleja_ochoa.png', '', '', '', ''),
+(44, 42, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '6321ff3e02e4e-firma_aleja_ochoa.png', '', '', '', ''),
+(45, 43, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '6321ff8518e3b-firma_aleja_ochoa.png', '', '', '', ''),
+(46, 47, 'JORGE ARMANDO DIAZ HERNANDEZ', '1104068388', '632d1af5e9955-firma_default.png', '', '', '', ''),
+(47, 48, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '6331c2f91b7b3-firma_aleja_ochoa.png', '', '', '', ''),
+(48, 49, 'DRA. LEIDY LOZANO QUINTERO', '', '63335b8506d8d-firma_default.png', '', '', '', ''),
+(49, 50, 'DRA. LEIDY LOZANO QUINTERO', '', '63336b43ddd80-firma_default.png', '', '', '', ''),
+(50, 51, 'MARIA ALEJANDRA OCHOA SALAMANCA', '1019132020', '633f251124fae-firma_aleja_ochoa.png', '', '', '', ''),
+(51, 52, '', '', '6351cfd2dd967-firma_default.png', '', '', '', ''),
+(52, 53, 'ALEJANDRA OCHOA', '1019132020', '635741365feb0-firma_aleja_ochoa.png', '', '', '', ''),
+(53, 54, 'PAOLA ANDREA UYABAN', '1018498576', '63585e57bafa7-1018498576paola.png', '', '', '', ''),
+(54, 55, 'PAOLA ANDREA UYABAN', '1018498576', '63585f59276f9-1018498576paola.png', '', '', '', ''),
+(55, 56, 'LUZ EVELIA VARGAS', '33646868', '636aac1a25aed-luz_vargas.png', '', '', '', ''),
+(56, 57, 'LUZ EVELIA VARGAS', '33646868', '636aadf64c484-luz_vargas.png', '', '', '', ''),
+(57, 58, 'LUZ EVELIA VARGAS', '33646868', '636bd4e106549-33646868luz_vargas.png', '', '', '', ''),
+(58, 59, 'PAOLA ANDREA UYABAN', '1018498576', '636bdf7d5f1a2-1018498576paola.png', '', '', '', ''),
+(59, 60, 'PAOLA ANDREA UYABAN', '1018498576', '636bdf93562d1-1018498576paola.png', '', '', '', ''),
+(60, 61, 'MARIA EUGENIA MONTERO', '', '63782affc833a-firma_default.png', '', '', '', ''),
+(61, 62, 'JHON OSORIO', '', '6351cfd2dd967-firma_default.png', 'Si', '638a14224afce-WhatsAp.jpeg', '638a14224afcf-WhatsAp.jpeg', '638a14224afd0-WhatsAp.jpeg'),
+(62, 63, 'PAOLA ROCA', '', '638d12ff217af-firma_default.png', 'Si', '638d12ff217b4-WhatsApp1.jpeg', '638d12ff217b5-WhatsApp2.jpeg', '638d12ff217b6-WhatsApp3.jpeg'),
+(63, 64, 'GERMAN CRUZ', '.', '638d4bb18ebe8-firma_default.png', 'Si', '638d4bb18ebef-1.jpeg', '638d4bb18ebf0-2.jpeg', '638d4bb18ebf1-3.jpeg'),
+(64, 65, 'LUZ VARGAS', '33646868', '638e1b6bcdd5c-33646868luz_vargas.png', 'Si', '638e1b6bcdd62-A.jpeg', '638e1b6bcdd63-B.jpeg', '638e1b6bcdd64-C.jpeg'),
+(65, 66, 'ALEJANDRA OCHOA', '1019132020', '63a08e131a610-1019132020aleja_ochoa.png', 'No', '63a08e131a615-1.jpeg', '63a08e131a616-2.jpeg', '63a08e131a617-3.jpeg'),
+(66, 68, 'ALEJANDRA OCHOA', '1019132020', '63a092c76e09b-1019132020aleja_ochoa.png', 'No', '63a092c76e0a2-b.jpeg', '63a092c76e0a3-c.jpeg', '63a092c76e0a4-d.jpeg'),
+(67, 69, 'PAOLA UYABAN', '1018498576', '63ced8db9ec56-firma_paola_u.png', 'Si', '63ced14dadfd3-AA.jpeg', 'NA.png', 'NA.png'),
+(68, 70, 'PAOLA UYABAN', '1018498576', '63ced8db9ec56-firma_paola_u.png', 'Si', '63ced8db9ec5b-d.jpeg', '63ced8db9ec5c-DD.jpeg', '63ced14dadfd3-AA.jpeg'),
+(69, 71, 'PAOLA UYABAN', '1018498576', '63ced8db9ec56-firma_paola_u.png', 'Si', '63cfca4818597-1.jpg', '63cfca4818598-2.jpg', '63cfca4818599-3.jpg'),
+(70, 73, 'GIUSEPPE ROA BUENO', '1015448471', '63cfd7c2d628a-firma_default.png', 'No', '63cfd7c2d6290-A.jpg', '63cfd7c2d6291-B.jpg', '63cfd7c2d6292-C.jpg'),
+(71, 74, 'PAOLA UYABAN', '1018498576', '63ced8db9ec56-firma_paola_u.png', 'No', '63d018c8ba40c-A.jpg', '63d018c8ba40d-B.jpg', 'NA.png'),
+(72, 75, 'paola uyaban', '1018498576', '63ced8db9ec56-firma_paola_u.png', 'No', '63d02a2d425a4-A.jpg', '63d018c8ba40d-B.jpg', '63d02a2d425a7-C.jpeg'),
+(73, 76, 'paola uyaban', '1018498576', '63ced8db9ec56-firma_paola_u.png', 'Si', 'b.jpeg', 'c.jpeg', 'e.jpeg'),
+(74, 77, 'LEONARDO CIFUENTES', 'CC', '63efeff04122f-firma_default.png', 'No', '63efeff041232-c.jpeg', '63efeff041233-a.jpeg', '63efeff041234-b.jpeg'),
+(75, 78, 'ING.', 'CC', '63f670a3b362a-firma_default.png', 'Si', '63f670a3b362c-Q.jpeg', '63f670a3b362d-W.jpeg', '63f670a3b362f-E.jpeg');
 
 -- --------------------------------------------------------
 
@@ -356,7 +388,12 @@ INSERT INTO `equipo` (`id_equipo`, `nombre`, `no_activo`, `marca`, `modelo`, `se
 (41, 'RX FIJO', 'NA', 'DRGEM', 'GXR-40', '6AB2192605A', 'BUENO', 'NA', 'TERCERO', 'EN CONTRATO A/M'),
 (42, 'RX FIJO', 'NA', 'CONTROL X', 'CONRAD 425HF', '1525', 'BUENO', 'NA', 'TERCERO', 'EN CONTRATO A/M'),
 (43, 'RX PORTATIL', '72248', 'ECORAY', 'LTRA 100', 'SP9-2002054', 'BUENO', 'NA', 'TRCERO', 'EN CONTRATO A/M'),
-(44, 'FLUROSCOPIO', '187928', 'XISCAN', '450-6', '218/291', 'BUENO', 'NA', 'TERCERO', 'EN CONTRATO A/M');
+(44, 'FLUROSCOPIO', '187928', 'XISCAN', '450-6', '218/291', 'BUENO', 'NA', 'TERCERO', 'EN CONTRATO A/M'),
+(45, 'MAMOGRAFO', 'NA', 'G.E', 'DMR PLUS', '54071BU6', 'BUENO', 'NA', 'TERCERO', 'EN CONTRATO A/M'),
+(46, 'RAYOS X FIJO', 'NA', 'RADIOLOGIA', 'RST-310', 'G-35541', 'CON FALLA', 'NA', 'TERCERO', 'EN CONTRATO A/M'),
+(47, 'TOMOGRAFO', 'NA', 'TOSHIBA', 'ALEXION TSX033A', '1NA1342136', 'BUENO', 'NA', 'TERCERO', 'EN CONTRATO A/M'),
+(48, 'RAYOS X PORTATIL', 'NA', 'FMCONTROL', 'ULTRA 100', 'SP9-2002061', 'BUENO', 'NA', 'TRCERO', 'EN CONTRATO A/M'),
+(49, 'RX FIJO', 'NA', 'FMCONTROL', 'ULTRA 100', 'SP9-2002053', 'BUENO', 'NA', 'TRCERO', 'EN CONTRATO A/M');
 
 -- --------------------------------------------------------
 
@@ -417,7 +454,12 @@ INSERT INTO `inventario` (`id_inventario`, `fecha_add`, `equipo`, `frecuencia_ma
 (33, '2022-10-20 22:34:19', 41, 'SEMESTRAL', 'FIJO', 14, 1, 14, 21, 1),
 (34, '2022-11-19 00:40:04', 42, 'TRIMESTRAL', 'FIJO', 6, 1, 15, 22, 1),
 (35, '2022-11-29 14:02:28', 44, 'ANUAL', 'MOVIL', 15, 1, 1, 23, 1),
-(36, '2022-11-29 14:03:28', 43, 'ANUAL', 'MOVIL', 15, 1, 16, 24, 1);
+(36, '2022-11-29 14:03:28', 43, 'ANUAL', 'MOVIL', 15, 1, 16, 24, 1),
+(37, '2022-12-05 01:15:49', 45, 'ANUAL', 'FIJO', 16, 1, 17, 25, 2),
+(38, '2023-01-24 12:13:21', 46, 'TRIMESTRAL', 'FIJO', 1, 1, 1, 11, 1),
+(39, '2023-01-24 12:15:56', 47, 'TRIMESTRAL', 'FIJO', 1, 1, 1, 1, 6),
+(40, '2023-02-17 21:05:39', 48, 'ANUAL', 'FIJO', 15, 1, 1, 26, 1),
+(41, '2023-02-22 19:19:04', 49, 'ANUAL', 'FIJO', 15, 1, 4, 27, 1);
 
 -- --------------------------------------------------------
 
@@ -504,8 +546,6 @@ CREATE TABLE `reporte` (
   `cant_repto_cotizar` varchar(45) NOT NULL,
   `descrip_repto_utilizados` varchar(100) NOT NULL,
   `descrip_repto_cotizar` varchar(100) NOT NULL,
-  `equipo_operativo` varchar(10) NOT NULL,
-  `observa_equipo` varchar(200) NOT NULL,
   `tecnico_usuario` int(11) NOT NULL,
   `estatus` varchar(30) NOT NULL DEFAULT 'PENDIENTE'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -514,68 +554,85 @@ CREATE TABLE `reporte` (
 -- Volcado de datos para la tabla `reporte`
 --
 
-INSERT INTO `reporte` (`id_reporte`, `inventario`, `tipo_servicio`, `otro_servicio`, `tipo_asistencia`, `fecha_inicio`, `hora_inicio`, `fecha_final`, `hora_final`, `protocolo_matto`, `motivo_servicio`, `estdo_inicial_equipo`, `problemas_report`, `otro_problema`, `actividad_realizada`, `observa_general`, `cant_repto_utilizados`, `cant_repto_cotizar`, `descrip_repto_utilizados`, `descrip_repto_cotizar`, `equipo_operativo`, `observa_equipo`, `tecnico_usuario`, `estatus`) VALUES
-(1, 3, 1, 'NA', 3, '2022-02-07', '08:00:00', '2022-02-07', '12:00:00', 1, 'MANTENIMIENTO PROGRAMADO', 'FUNCIONANDO CORRECTAMENTE', 9, 'NA', 'SE REALIZA MANTENIMIENTO DE ACUERDO A PROTOCOLOS DE FABRICANTE', 'ANEXO PROTOCOLO MANTENIMIENTO', '0', '0', 'N.A', 'N.A', 'Si', 'SE ENTREGA EQUIPO A SATISFACCIÓN', 1, 'FINALIZADO'),
-(2, 7, 1, 'NA', 3, '2022-02-08', '13:00:00', '2022-02-08', '15:00:00', 2, 'Mantenimiento programado', 'Cable de poder de alimentación con blindaje, ', 9, 'NA', 'Se hace mantenimiento deacuerdo a protocolo', 'Se requiere cambio de cable de poder', '0', '5', 'N.A', 'CABLE ENCAUCHETADO 14X3 ', 'Si', 'Queda operativo pendiente el cambio de cable', 1, 'FINALIZADO'),
-(3, 5, 1, 'NA', 3, '2022-02-08', '14:00:00', '2022-02-08', '16:00:00', 0, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 5, 'NA', 'SE REALIZA MANTENIMIENTO DE ACUERDO A PROTOCOLO DE FABRICANTE', 'NO PERMITE COMUNICACION ENTRE CONSOLA Y COMPUTADOR DE SERVICIO', '0', '1', 'NA', 'TARJETA D702', 'Si', 'TARJETA DE COMUNICACION PRESENTA FALLA PARA C', 1, 'FINALIZADO'),
-(4, 6, 1, 'NA', 3, '2022-02-08', '08:00:00', '2022-02-08', '12:00:00', 1, 'MANTENIMIENTO PROGRAMADO', 'ERROR DE OVER CON TECNICAS ALTAS', 5, 'NA', 'SE HACE MANTENIMIENTO DE ACUERDO A PROTOCOLO', 'SE HACE AJUSTE DE PARAMETROS KVA Y mAS', '0', '0', 'NA', 'NA', 'Si', 'SE ENTREGA EL EQUIPO OPERATIVO CON LA ACLARAC', 1, 'FINALIZADO'),
-(5, 9, 4, 'NA', 3, '2022-02-18', '08:00:00', '2022-02-18', '09:00:00', 1, 'ENTREGA DE CR POR CONTINGENCIA', 'SE ENTREGA EN BUEN ESTADO DE FUNCIONAMIENTO', 9, 'NA', 'INSTALACION', 'SE ENTREGAN 4 CHASIS DE 14X17 Y UN 10X12 MAS ACCESORIOS DE ESTACION DE TRABAJO', '0', '0', 'NA', 'NA', 'Si', 'TIEMPO INDEFINIDO', 1, 'FINALIZADO'),
-(6, 4, 1, 'NA', 3, '2022-02-10', '14:00:00', '2022-02-10', '16:00:00', 2, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'SE HACE MANTENIMIENTO DE ACUERDO A PROTOCOLO DE FABRICANTE', 'SE HACE VERIFICACION DE PARAMETROS KV Y mAS', '0', '0', 'NA', 'NA', 'Si', 'SE HACEN PRUEBAS DE FUNCIONAMIENTO Y SE ENTRE', 1, 'FINALIZADO'),
-(7, 3, 2, 'NA', 3, '2022-02-14', '12:00:00', '2022-03-05', '16:00:00', 1, 'EQUIPO PRESENTA ERROR 31 AL DISPARO', 'SE DIAGNOSTICA DAÑO EN MONOBLOQUE', 5, 'NA', 'SE RETIRA MONOBLOQUE DEL SERVICIO PARA SER ANALIZADO Y REPARADO EN LABORATORIO', 'SE HACE CAMBIO DE ACEITE Y VACIÓ , SE HACE LIMPIEZA DE BOBINAS DE FILAMENTO, \nSE ENCONTRO FUGAS DE A', '2', '0', 'ACEITE DIALA S4', 'NA', 'Si', 'SE RECOMIENDA EVITAR GOLPEAR EL MONOBLOQUE', 1, 'FINALIZADO'),
-(8, 13, 1, 'NA', 3, '2022-03-14', '08:00:00', '2022-03-14', '10:00:00', 2, 'MANTENIMIENTO PROGRAMADO', 'LUZ COLIMADOR INTERMITENTE', 4, 'NA', 'SE HACE MANTENIMIENTO DE ACUERDO A PROTOCOLO', 'SE HACE CAMBIO DE PORTA FUSIBLES Y UN RELEVO', '5', '0', 'PORTAFUSIBLES\nRELEVO DE 24V', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(9, 11, 1, 'NA', 3, '2022-03-11', '08:00:00', '2022-03-11', '11:00:00', 3, 'MANTENIMIENTO PROGRAMADO', 'FRENO DE COLUMNA SUELTO', 9, 'NA', 'SE REALIZA MANTENIMIENTO DE ACUERDO A PROTOCOLO\n				\n', 'AJUSTE DE FRENOS DE COLUMNA Y BUKY MESA', '0', '0', 'NA', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(10, 14, 4, 'NA', 3, '2022-03-15', '11:00:00', '2022-03-16', '15:00:00', 1, 'TRASLADO DE EQUIPO', 'BUENO', 9, 'NA', 'TRANSPORTE DE EQUIPO DE BOGOTA A SAN ALBERTO ', 'NA', '0', '0', 'NA', 'NA', 'Si', 'ALQUILER POR DOS MESES', 1, 'FINALIZADO'),
-(11, 15, 2, 'NA', 3, '2022-03-11', '12:00:00', '2022-03-11', '15:00:00', 1, 'REPARACION DE EQUIPO DAÑO EN TARJETAS D962 Y ', 'ERRORES 6 Y 13', 5, 'NA', 'SE HACE CAMBIO DE FUSIBLES DE BANCO DE CONDENSADORES, CAMBIO DE TARJETA D952 Y D962', 'LOS CONTINUOS DAÑOS DE TARJETA DE CARGA SON OCASIONADOS POR LA FUGA DE CORRIENTE EN LAS ACOMETIDAS E', '1', '0', 'D952\nD962\n20CT', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(12, 6, 2, 'NA', 3, '2022-03-01', '08:00:00', '2022-03-05', '22:00:00', 1, 'PRESENTA ERROR 01 Y OVER', 'EQUIPO PRESENTA ERROR AL SELECCIONAR TECNICAS', 5, 'NA', 'SE HACE DIAGNOSTICO CON TARJETAS DE GENERADOR Y CONSOLA.\nSE DIAGNOSTICA DAÑO EN TARJETA DE CONSOLA Y', 'CAMBIAR CONTACTORES DE ENTRADA\nTARJETA DE CONSOLA \nY REPARAR TARJETA DE FUENTES DE GENERADOR', '0', '1', 'NA', 'TARJETA CONSOLA\nTARJETA CPU GENRADOR', 'Si', 'EQUIPO QUEDA OPERANDO CON LIMITACIONES EN LAS', 1, 'FINALIZADO'),
-(13, 12, 1, 'NA', 3, '2022-03-14', '14:00:00', '2022-03-14', '15:00:00', 1, 'MANTENIMEINTO PROGRAMADO', 'FRENO DE SOPORTE DE BRAZO PRESENTA DESGASTE', 6, 'NA', 'SE HACE MANTENIMIENTO DE ACUERDO A PROTOCOLO DE FABRICANTE', 'SE HACE AJUSTE DE FRENO DE SOPORTE DE TUBO', '1', '0', 'SEGURO PIN', 'NA', 'Si', 'SOLTAR EL SEGURO ANTES DE EJERCER FUERZA EN E', 1, 'FINALIZADO'),
-(14, 16, 5, 'NA', 3, '2022-03-04', '12:00:00', '2022-03-04', '14:00:00', 1, 'DIAGNOSTICO Y COTIZACION DE REPARACION', 'EQUIPO FUERA DE SERVICIO\nFALTA SEGURO DE BRAZ', 5, 'NA', 'SE HICIERON PRUEBAS DE FUNCIONAMIENTO Y EL LAS TECLAS DE CONTROL NO ACTUAN', 'PARA REALIZAR LA REPARACION ES NECESARIO RETIRAR EL EQUIPO COMPLETO DE LA SEDE', '0', '4', 'NA', 'RODAMIENTOS\nSOLDADURA\nTECLADO DE CONSOLA\nSEGU', 'No', 'FUERA DE SERVICIO', 1, 'FINALIZADO'),
-(15, 17, 1, 'NA', 3, '2022-03-28', '15:00:00', '2022-03-28', '16:00:00', 1, 'MANTENIMIENTO PROGRAMADO', 'SE EVIDENCIA PERFORACIONES EN LA REJILLA DE I', 4, 'NA', 'SE HACE MANTENIMIENTO DE ACUERDO A PROTOCOLO DE FABRICANTE\nSE HACE LIMPIEZA DE REJILLA DE INTENSIFIC', 'LAS PERFORACIONES DE LA REJILLA DEL INTENSIFICADOR GENERAN ARTIFICIOS EN LA IMAGEN DIFICULTANDO EL D', '0', '1', 'NA', 'REJILLA DE 9 PULGADAS INTENSO', 'Si', 'EL EQUIPO SE DEJA OPERATIVO CON LA OBSERVACIÓ', 1, 'FINALIZADO'),
-(16, 18, 2, 'NA', 3, '2022-03-26', '18:00:00', '2022-03-26', '18:30:00', 1, 'SOLICITUD DE CAMBIO DE CÓDIGOS DE BARRAS EN C', 'LOS CÓDIGOS DE BARRAS DE CASSETTES DE MAMOGRA', 5, 'NA', 'SE HACE CAMBIO DE CUATRO CÓDIGOS DE BARRAS PARA LOS CHASIS DE MAMOGRAFIA', 'SE HACE PRUEBAS DE FUNCIONAMIENTO ', '0', '4', 'NA', 'CODIGOS DE BARRA MAMO', 'Si', 'NA', 1, 'FINALIZADO'),
-(17, 19, 1, 'NA', 3, '2022-04-09', '08:00:00', '2022-04-09', '12:00:00', 3, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificar del estado del panel de control de mando, tapas, carcasas, tornillería y pintura en genera', 'PINTURA DE SOPORTE DE CHASIS MURAL SE ENCUENTRA DETERIORADA', '0', '0', 'NA', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(18, 22, 1, 'NA', 3, '2022-04-09', '14:00:00', '2022-04-09', '16:00:00', 6, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificar temperatura ambiente.\nVerificar estado de monitores, CPU, accesorios del equipo\nVerificaci', 'MANTENER SIEMPRE CON AIRE ACONDICIONADO LA SALA PARA EVITAR DAÑOS POR SOBRECALENTAMIENTO', '0', '1', 'NA', 'cassette 10x12\ncassette 14x17', 'Si', 'NA', 1, 'FINALIZADO'),
-(19, 20, 1, 'NA', 3, '2022-04-09', '17:00:00', '2022-04-09', '19:00:00', 1, 'MANTENIMIENTO PROGRAMADO', 'IMAGEN ADQUIRIDA MUESTRA POCA DEFINICION EN L', 10, 'NA', 'LUBRICACION DE RODAMIENTOS Y MOVIMIENTOS DE RECORRIDO PANORAMICO\nVERIFICACION DE COLIMACION\nVERIFICA', 'SE HACE AJUSTE DE CORRIENTES DE TUBO PARA MEJORAR LA DEFINICION DE IMAGEN', '0', '0', 'NA', 'NA', 'Si', 'SE HACEN PRUEBAS CON PACIENTE Y SE NOTA MEJOR', 1, 'FINALIZADO'),
-(20, 21, 1, 'NA', 3, '2022-04-10', '11:00:00', '2022-04-10', '13:00:00', 6, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificación del estado de lámparas de borrado\nLimpieza de colector de imagen\nLimpieza lubricación d', 'MANTENER TEMPERATURA DE ACUERDO A INSTRUCCIONES DE FABRICA PARA EVITAR CALENTAMIENTO DE FUENTE', '0', '0', 'NA', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(21, 23, 1, 'NA', 3, '2022-04-10', '08:00:00', '2022-04-10', '12:00:00', 3, 'MANTENIMIENTO PROGRAMADO', 'LUZ DE COLIMADOR NO ENCIENDE', 5, 'NA', 'Verificar el movimiento de transporte de la columna vertical\nVerificar el desplazamiento oblicuo, ve', 'SE ENCONTRO DAÑO DE TARJETA DE TIEMPO DE COLIMADOR\nDAÑO DE SOCKET DE HALOGENO\nDESGASTE EN SELECTOR D', '0', '1', 'NA', 'SOCKET PARA LAMPARA\nTARJETA ELECTRONICA DE TI', 'Si', 'EL EQUIPO QUEDA OPERATIVO CON LA ACLARACION D', 1, 'FINALIZADO'),
-(22, 2, 1, 'NA', 3, '2022-04-12', '09:00:00', '2022-04-12', '10:00:00', 6, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificar del estado de scanner, tapas, carcasas, tornillería y pintura en general.\r\nVerificarlas et', 'NA', '0', '0', 'NA', 'NA', 'SI', 'NA', 1, 'FINALIZADO'),
-(23, 1, 1, 'NA', 3, '2022-04-12', '14:00:00', '2022-04-12', '18:00:00', 4, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificar del estado del panel de control de mando, tapas, carcasas, tornillería y pintura en genera', 'MANTENER TEMPERATURA POR DEBAJO DE 22 GRADOS C. PARA EVITAR SOBRECALENTAMIENTOS DE TUBO RX', '0', '0', 'NA', 'NA', 'SI', 'NA', 1, 'FINALIZADO'),
-(24, 25, 2, 'NA', 3, '2022-04-19', '08:00:00', '2022-04-19', '09:00:00', 1, 'DESAJUSTE EN TIEMPO DE DISPARO', 'ESTADO MECANICO DEL EQUIPO BUENO\nESTADO ELECT', 5, 'NA', 'SE HACE MEDICIÓN DE TIEMPO DE DISPARO EN VARIAS PARAMETROS Y SE ENCONTRÓ UN DESAJUSTE DE 80%\nSE REAL', 'VALOR  DE REFERENCIA EN SEGUNDOS                 0.05          0.60              0.83            1.0', '0', '0', 'NA', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(25, 26, 2, 'NA', 3, '2022-04-19', '10:00:00', '2022-04-19', '11:00:00', 1, 'DESAJUSTE EN TIEMPO DE DISPARO', 'ESTADO MECANICO DEL EQUIPO BUENO\nESTADO ELECT', 5, 'NA', 'SE HACE MEDICIÓN DE TIEMPO DE DISPARO EN VARIAS PARAMETROS Y SE\nENCONTRÓ UN DESAJUSTE DE 20% ENCUANT', 'VALOR DE REFERENCIA EN SEGUNDOS    0.30     0.41     0.60   1.30\nVALOR DE MEDIDA EN MILISEGUNDOS 296', '0', '0', 'NA', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(26, 1, 1, 'NA', 3, '2022-04-12', '14:00:00', '2022-04-12', '17:00:00', 4, 'MANTENIMIENTO PROGRAMADOS', 'BUENO', 9, 'NA', 'Verificar y ajustar los, soporte de tubo, tensor de contrapeso, rotación de gantry, desplazamiento y', 'MANTENER EL AIRE ACONDICIONADO PARA EVITAR SOBRECALENTAMIENTOS DE TUBO', '0', '0', 'NA', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(27, 2, 1, 'NA', 3, '2022-04-12', '10:00:00', '2022-04-12', '11:00:00', 6, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificar del estado de scanner, tapas, carcasas, tornillería y pintura en general.\nVerificarlas eti', 'NA', '0', '0', 'NA', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(28, 8, 2, 'NA', 3, '2022-05-01', '08:00:00', '2022-05-03', '22:10:00', 1, 'EQUIPO PRESENTA ERROR 22 AL DISPARO', 'SE ENCONTRO DAÑO EN EL BANCO DE IGBT DE ALTA ', 5, 'NA', 'SE HACE REEMPLAZO DE MODULOS DE IGBT, REPARACION DE TARJETA DE CONTROL DE DISPARO DE IGBT, Y REPARAC', 'DAÑO OCACIONADO POR SOBRECARGA DE TENSION EN LA RED ELECTRICA', '2', '0', 'BSM300GB120DLC\nFUSIBLE 150A 300VC\nRESISTENCIA', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(29, 4, 1, 'NA', 3, '2022-05-07', '09:00:00', '2022-05-07', '12:00:00', 2, 'MANTENIMIENTO PROGRAMADO', 'EQUIPO PRESENTA ROPTURA DE TORNILLO DE TAPA D', 9, 'NA', 'Verificar y ajustar los frenos de rodamientos, soporte de tubo, tensor de contrapeso y soporte del c', 'SE HACE REPARACION DE TAPA DE RUEDA', '0', '0', 'NA', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(30, 3, 1, 'NA', 3, '2022-05-07', '15:00:00', '2022-05-07', '17:00:00', 2, 'MANTENIMIENTO PREVENTIVO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificar y ajustar los frenos de rodamientos, soporte de tubo, tensor de contrapeso y soporte del c', 'PRESENTA DAÑO EN LOS AJUSTE DE TORNILLO DE LA TAPA DE TECLADO', '0', '0', 'NA', 'NA', 'Si', 'SE PROGRAMARA UNA VISITA PARA CAMBIO DE TAPA ', 1, 'FINALIZADO'),
-(31, 27, 2, 'NA', 3, '2022-05-20', '08:30:00', '2022-05-20', '11:00:00', 1, 'REPORTAN DESAJUSTE DE TIEMPO', 'EL EQUIPO NO CUENTA CON DISPLAY DE VISUALIZAC', 5, 'NA', 'SE VERIFICA Y SE JUSTE VALORES DE MA.\nSE HIZO VERIFICACION Y AJUSTE DE TIEMPO CON 9 VALORES PREDETER', 'ES NECESARIO EL CAMBIO DE TEMPORIZADOR YA QUE EL QUE TIENE PRESENTA INESTABILIDAD', '0', '0', 'NA', 'NA', 'Si', 'PATRON DE MEDIDA UTILIZADO KVMETER MARCA ECC ', 1, 'FINALIZADO'),
-(32, 6, 2, 'NA', 3, '2022-05-05', '14:00:00', '2022-05-14', '17:00:00', 1, 'SE HACE RETIRO DE GENERADOR PARA REPARACION', 'PRESENTA ERRORES 01- 02 \nNO HACE CONEXION DE ', 1, 'NA', 'SE RETIRA EL EQUIPO DE LA SEDE PARA REPARACION Y PRUEBAS DE LABORATORIO\nCONTACTOS DE ENTRADA DESGAST', 'SE ENTREGA EQUIPO OPERATIVO CON LA CONSOLA FUNCIONANDO CORRECTAMENTE Y SE ESTARA COTIZANDO UNA CONSO', '2', '1', 'CONTACTORES\nFUSIBLES 250 AMP\nRESISTENCIA 60W', 'TECLADO CONSOLA', 'Si', 'LOS CONTACTORES FUERON SUMISTRADOS POR EL CLI', 1, 'FINALIZADO'),
-(33, 3, 2, 'NA', 3, '2022-05-18', '15:00:00', '2022-05-18', '16:00:00', 1, 'FALLO EN LUZ COLIMADOR', 'LUZ DE COLIMADOR NO ENCIENDE', 1, 'NA', 'SE ENCUENTRA FILAMENTO DE HALOGENO ABIERTO Y SE REMPLAZA', 'NA', '1', '0', 'HALOGENO 24V 150W', 'NA', 'Si', 'NA', 1, 'CANCELADO'),
-(34, 3, 2, 'NA', 3, '2022-05-18', '15:00:00', '2022-05-18', '16:00:00', 1, 'FALLO LUZ COLIMADOR', 'LUZ COLIMADOR NO ENCIENDE', 5, 'NA', 'SE ENCONTRO HALOGENO QUEMADO Y SE HACE EL REMPLAZO DE HALOGENO', 'NA', '1', '0', 'HALOGENO 24V 150W', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(35, 27, 2, 'NA', 3, '2022-05-20', '08:30:00', '2022-05-20', '11:30:00', 1, 'DESAJUSTE DE TIEMPO DE EXPOSICION ', 'EL EQUIPO NO CUENTA CON DISPLAY DE VISUALIZAC', 5, 'NA', 'SE VERIFICA Y SE JUSTE VALORES DE MA.\nSE HIZO VERIFICACION Y AJUSTE DE TIEMPO CON 9 VALORES\nPREDETER', 'PATRON DE MEDIDA UTILIZADO KVMETER MARCA ECC MODELO 820', '0', '0', 'NA', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(36, 7, 2, 'NA', 3, '2022-06-08', '09:00:00', '2022-06-08', '18:00:00', 1, 'DESCONFIGURACION', 'EQUIPO NO SUBE EL SISTEMA', 7, 'NA', 'SE HACE CONFIGURACION DEL SISTEMA SEGUN EL MANUAL DE SERVICIO\nAJUSTE DE CORRIENTES DE TUBO\nAJUSTE DE KV\nAJUSTE DE TIEMPOS\n	60KV	110KV	60KV	110KV\nmA	AJUSTE	AJUSTE	AJUSTE	AJUSTE\n25	2080	2050	2080	2050\n50	2190	2155	2200	2170\n100	2332		2340	\n200	2496			\n', 'SE HIZO AJUSTE UTILIZANDO PATRON DE MEDIDA MODELO ECC 820', 'NA', 'NA', 'NA', 'NA', 'Si', 'TUBO DE RX PRESENTA RUIDO EN EL ANODO POR DESJASTE NORMAL', 1, 'FINALIZADO'),
-(37, 5, 2, 'NA', 3, '2022-05-30', '15:15:00', '2022-06-08', '17:00:00', 1, 'REPORTANFALLA DE CONTROLES', 'FALLA DE CONTROL DE MANDOS DE GANTRY\nFALLA DE POSICIONAMIENTO DE FILTRO', 5, 'NA', 'SE HIZO REVISION DE CONESCTORES, PULSADORES DE CONTROLES DE ROTACION DE GANTRY, SE HACE TEST DE CONDUCTIVIDAD DE CABLES, SE HACE AJUSTE DE POSICIONAMIENTO DE GANTRY', 'SE ENCONTRO CONECTORERS ABIERTOS Y POTENCIOMETRO FUERA DE POSICION\nDAÑO DE MOTOR A PASO DE FILTRO', 'NA', '1', 'NA', 'MOTOR A PASO 12V 52 OHM', 'Si', 'EL EQUIPO QUEDA OPERATIVO CON FUNCION DE FILTRO EN MO/MO Y MO/RH NO OPERA EN W/RH', 1, 'FINALIZADO'),
-(38, 8, 1, 'NA', 3, '2022-06-03', '08:00:00', '2022-06-03', '14:00:00', 1, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'SE HACE CAMBIO DE RESISTENCIAS DE TARJETA DE POTENCIA DE GENERADOR\nSEHACE CAMBIO DE 4 DISPLAY DE 7 SEGMENTOS DE TECLADO', 'SE VERIFICA Y SE AJUSTA KV Y CORRIENTES DE TUBO\nSE HACE AJUSTE DE FRENOS DE MESA', '4\n10', 'NA', 'DISPLAY DE 7 SEGMENTOS\nRESISTENCIAS 1W', 'NA', 'Si', 'LOS REPUESTOS REEMPLAZADOSSE HACE POR DESGASTE NORMAL PREVENTIVO,  NO POR DAÑO', 1, 'FINALIZADO'),
-(39, 28, 2, 'NA', 3, '2022-06-16', '11:00:00', '2022-06-17', '12:30:00', 1, 'ATASCO DE PANTALLA Y LECTURA DE CODIGO DE BARRAS', 'BUENO', 5, 'NA', 'SE HACE LIMPIEZA DE SENSOR DE DETECCCION DE LECTURA DE BARRAS\nSE HACE LIMPIEZA DE RODILLOS\nY LUBRICACION DE TORNILLO SINFIN', 'LOS RODILLOS PRESENTAN DESGASTE DE RECUBRIMIENTO QUE HACE QUE LA PANTALLA SE ATASQUE', 'NA', '1', 'NA', 'JUEGO DE RODILLOS', 'Si', 'ES NESESARIO EL CAMBIO YA QUE ESTO PUEDE DAÑAR LA PANTALLA', 1, 'FINALIZADO'),
-(40, 1, 1, 'NA', 3, '2022-07-06', '10:00:00', '2022-07-06', '12:00:00', 1, 'MANTENIMIENTO PROGRAMADO', 'BUENO \nCONTADOR DE DISPAROS 173621', 9, 'NA', 'Verificar y ajustar los, soporte de tubo, tensor de contrapeso, rotación de gantry, desplazamiento y compresión de mama.\nVerificar deslizamiento de regilla de buky\nVerificar y ajustar la medición de altura de paleta de compresión\nVerificar y ajustar la medición de fuerza de compresión\nVerificar y ajustar la medición de la angulación de gantry\nVerificar el funcionamiento de pedales de compresión\n Verificar detector de chasis y chasis de magnificación \nVerificar el funcionamiento de filtros\n Comprobar que el localizador del haz de luz del colimador está operado tanto con el panel de control como', 'SE EVIDENCIA VARIOS ERRORES EN EL LOG INTERNO DEVIDO A CAMBIOS DE VOLTAJE DE ENTRADA', 'NA', 'NA', 'NA', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(41, 2, 2, 'NA', 3, '2022-07-05', '12:00:00', '2022-07-10', '20:00:00', 1, 'NO CAPTURA IMAGEN ', 'EQUIPO HACE EL PROCESO DE DIGITALIZACION PERO NO MUESTRA LA IMAGEN', 7, 'NA', 'SE HIZO CAMBIO DE CABLE USB Y SE HIZO UNA RESTAURACION DEL SISTEMA PERO SIGUIO IGUAL.\nSE RETIZA EL EQUIPO DE LAS INSTALACIONES PARA INSTALAR SOFTWARE Y APLICATIVO DE CARESTREAM', 'SE RECOMIENDA NO INSTALAR APLICACIONES AJENAS A CARESTREAM', '1', 'NA', 'DISCO DURA 1 T', 'NA', 'Si', 'UTILIZAR EL COMPUTADOR SOLO PARA FINES ESPECIFICOS DE IMAGENES', 1, 'FINALIZADO'),
-(42, 3, 1, 'NA', 3, '2022-08-05', '14:08:00', '2022-08-05', '16:09:00', 1, 'MANTENIMIENTO PROGRAMADO', 'TAPA DE TECLADO SUELTA\nFRENOS DESGASTADO', 3, 'NA', 'SE HACE HAJUSTES COLIMACION\nVERIFICACION DE PARAMETROS\n', 'CAMBIO DE CAUCHOS DE FRENOS\nREPARACION DE SOPORTE TORNILLOS DE TAPA', '2', 'NA', 'CAUCHOS FRENO', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(43, 4, 1, 'NA', 3, '2022-08-04', '15:00:00', '2022-08-04', '15:20:00', 1, 'MANTENIMIENTO PROGRAMDA', 'BUENO', 9, 'NA', 'TEST DE COLIMACION\nLUBRICACION DE RODAMIENTOS\nVERIFICACION DE PARAMETROS', 'NA', 'NA', 'NA', 'NA', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(44, 18, 2, 'NA', 3, '2022-07-27', '02:00:00', '2022-07-27', '06:00:00', 1, 'REPORTAN DESAJUSTE DE IMAGEN', 'IMAGEN SALE CORTADA\nGLAVO SE ENCONTRO SUELTO', 5, 'NA', 'SE HACE AJUSTE DE GALVO\nAJUSTE Y CALIBRACION DE IMAGEN\nAJUSTE Y ALINEACION DE ESPEJOS\nAJUSTE DE UNIDAD OPTICA', 'SE HACEPRUEBAS DEFUNCIONAMIENTO CON DIFERENTES CHASIS', 'NA', 'NA', 'NA', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(45, 3, 2, 'NA', 3, '2022-09-08', '10:00:00', '2022-09-08', '13:00:00', 1, 'EQUIPO PRESENTA ERROR 08', 'SOPORTE DE TAPA TUBO SUELTO\n', 5, 'NA', 'SE HACE VERIFICACION DE CONEXIONES \nLIMPIEZA DE CONTACTOS Y VERIFICACION DE PARAMETROS\n', 'SE EVIDENCIA SOBRECARGA EN BANCO DE CONDENSADORES Y TARJETA DE CARGA Y DESCARGA', 'NA', 'NA', 'NA', 'NA', 'Si', 'SE RECOMIENDA EL USO ADECUADO EN CUANTO A LA CARGA DE TRABAJO YA QUE EL EQUIPO ES DE 16 KW Y NO REEMPLAZA A UN FIJO DE 45KW', 1, 'FINALIZADO'),
-(46, 2, 2, 'NA', 3, '2022-09-07', '18:00:00', '2022-09-07', '19:00:00', 1, 'NO DIGITALIZA CHASIS DE 10X12', 'PRESENTA ERROR DE DIGITALIZACION CON CHASIS DE 10X12', 6, 'NA', 'SE HACE LIMPIEZA DE RODILLOS\nSE HACE PRUEBAS CON VARIOS CHASIS', 'SE HACE CAMBIO DE CHASIS TAMAÑO 10X12', '2', 'NA', 'CHASIS 10X12', 'NA', '¿El equipo', 'SE HACE CAMBIO DE UN CHASIS 10X12 Y SE ENTREGA UN ADICIONAL', 1, 'FINALIZADO'),
-(47, 29, 2, 'NA', 1, '2022-09-16', '12:00:00', '2022-09-19', '17:00:00', 1, 'EQUIPO NO EMITE RX', 'LUZ DE COLOMADOR DIRECTA\nNO HAY EMISION DE RX\nFRENOS DESAJUSTADOS', 5, 'NA', 'SE ENCONTRO DAÑO EN CONTACTOS DEL SELECTOR DE mA EL CUAL SE HACE SU REPARACION\nSE CAMBIA RELEVO DE TEMPORIZADOR DE LUZ COLIMADOR\nSE HACE CAMBIO DE ELECTROFRENOS DE MESA\nSE HACE CAMBIO DEBUKY DEMESA\nSE HACE CAMBIO DE DISPLAY DE TIEMPO', 'SE RECOMIENDA CAMBIAR SELECTOR DE mA\nY AJUSTAR Y VERICAR PARAMETROS PERIODICAMENTE', '1\n2\n1', '1', 'RELEVO 24V DC\nELECTROFRENOS\nTARJETA DE TIEMPO', 'SELECTOR DEE20 AMP 5 PASOS', 'Si', 'NA', 1, 'FINALIZADO'),
-(48, 32, 2, 'NA', 3, '2022-08-19', '08:00:00', '2022-08-30', '08:00:00', 1, 'DAÑO ELECTRONICO POR TENSION DE RED', 'SE ENCONTRO CORTOCIRCUITO EN TARJETA D952 Y DESPRENDIMIENTO DE CONDENSADORES EN TARJETA D962\nTARJETA', 1, 'NA', 'SE HACE CAMBIO DE TARJETAS D952 Y D962\nSE VERIFICA CARGA Y DESCARGA DE CONDENSADORES\nSE HACE CALIBRACION DE CORRIENTES Y KV\n', 'SE REVISO LA RED ELECTRICA EN LOS PUNTOS DONDE OCURRIO EL DAÑO Y SE ENCONTRO QUE EL POLO A TIERRA TIENE UNA FUGA DE VOLTAJE DE 40V', '1\n1', 'NA', 'D952\nD962', 'NA', 'Si', 'EQUIPO OPERATIVO SIN MEDICION DE DOSIS POR DAÑO DE TARJETA', 1, 'FINALIZADO'),
-(49, 31, 1, 'NA', 3, '2022-06-25', '10:00:00', '2022-06-25', '14:00:00', 6, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Limpieza rodillos\nLimpieza y lubricación de tornillos sin fin\nVerificación de fuentes de voltaje\nLimpieza verificación mecánica de cassettes y pantallas\nLimpieza de CPU, monitor teclado u ups\nTest de imagen con phantom para escala de gris \nPruebas de homogeneidad de imagen \nTes de resolución de imagen\n', 'SE APRECIA DESGASTE EN ROTACION DE MODULO OPTICO ', 'NA', '1', 'NA', 'MODULO OPTICO', 'Si', 'NA', 1, 'FINALIZADO'),
-(50, 30, 1, 'NA', 3, '2022-06-25', '14:01:00', '2022-06-25', '18:00:00', 3, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'ALINEAR EL CAMPO DE LUZ DEL COLIMADOR CON EL CAMPO DE RADIACIÓN\nTEST DE COLIMACIÓN Y CAMPO DE RADIACIÓN.\nVERIFICACIÓN DE PERPENDICULARIDAD DE RAYO.\nALINEACIÓN DE COLIMADOR CON BUKY MESA Y BUKY MURAL\nVERIFICAR NIVELES DE MESA Y BUKY MURAL.\nVERIFICACIÓN DE PARÁMETROS BÁSICOS DE FUNCIONAMIENTO (KVP, MA, T. EXPO)\nEXAMINAR CUIDADOSAMENTE EL CABLE DE ALTA TENSIÓN, LOS CONECTORES DE TARJETAS ELECTRÓNICAS, FUENTES DE PODER Y HAND SWICH.\nVERIFICAR LA LÍNEA DE ALIMENTACIÓN Y LA TIERRA.\nVERIFICAR LOS VALORES DE LA FUENTE DE VOLTAJE (AC Y DC)\n', 'AJUSTE DE mA EN FOCO DE 200\nAJUSTE DE TIEMPO DE EXPOCISION', 'NA', 'NA', 'NA', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(51, 3, 2, 'NA', 3, '2022-09-30', '16:00:00', '2022-09-30', '16:38:00', 1, 'CORRECTIVO', 'NO ENCIENDE LUZ DE COLIMADOR', 5, 'NA', 'SE HACE CAMBIO DE LAMPARA DE COLIMADOR', 'NA', '1', 'NA', 'HALOGENO 24V 150W', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(52, 33, 1, 'NA', 3, '2022-10-20', '08:00:00', '2022-10-20', '12:00:00', 3, 'MANTENIMIENTO PROGRAMADO', 'LUZ DE COLIMADOR NO ENCIENDE', 10, 'LUZ COLIMADOR', 'ALINEAR EL CAMPO DE LUZ DEL COLIMADOR CON EL CAMPO DE RADIACIÓN\nTEST DE COLIMACIÓN Y CAMPO DE RADIACIÓN.\nVERIFICACIÓN DE PERPENDICULARIDAD DE RAYO.\nALINEACIÓN DE COLIMADOR CON BUKY MESA Y BUKY MURAL\nVERIFICAR NIVELES DE MESA Y BUKY MURAL.\nVERIFICACIÓN DE PARÁMETROS BÁSICOS DE FUNCIONAMIENTO (KVP, MA, T. EXPO)\nEXAMINAR CUIDADOSAMENTE EL CABLE DE ALTA TENSIÓN, LOS CONECTORES DE TARJETAS ELECTRÓNICAS, FUENTES DE PODER Y HAND SWICH.\nVERIFICAR LA LÍNEA DE ALIMENTACIÓN Y LA TIERRA.\nVERIFICAR LOS VALORES DE LA FUENTE DE VOLTAJE (AC Y DC)\n', 'CAMBIO DE LAMPARA LED DE COLIMADOR', '1', 'NA', 'LAMPARA LED 6V 50W', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(53, 2, 1, 'NA', 3, '2022-10-24', '09:00:00', '2022-10-24', '11:00:00', 6, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificar estado de monitores, CPU, accesorios del equipo\nVerificación del estado de lámparas de borrado\nLimpieza de colector de imagen\nLimpieza lubricación de transporte de cassettes\nLimpieza de modulo óptico\nVerificación de fuentes de voltaje\nLimpieza verificación mecánica de cassettes y pantallas\nLimpieza de CPU, monitor teclado u ups\nLimpieza rodillos\nLimpieza y lubricación de tornillos sin fin\nPruebas de homogeneidad de imagen \nTes de resolución de imagen\n', 'NA', 'NA', 'NA', 'NA', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(54, 1, 1, 'NA', 3, '2022-10-25', '08:00:00', '2022-10-25', '12:00:00', 4, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificar y ajustar los, soporte de tubo, tensor de contrapeso, rotación de gantry, desplazamiento y compresión de mama.\nVerificar deslizamiento de regilla de buky\nVerificar y ajustar la medición de altura de paleta de compresión\nVerificar y ajustar la medición de fuerza de compresión\nVerificar y ajustar la medición de la angulación de gantry\nVerificar el funcionamiento de pedales de compresión\n Verificar detector de chasis y chasis de magnificación \nVerificar el funcionamiento de filtros\n Comprobar que el localizador del haz de luz del colimador está operado tanto con el panel de control como', 'MANTENER CONSTANTE EL AIRE ACONDICIONADO ', 'NA', 'NA', 'NA', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(55, 8, 1, 'NA', 3, '2022-10-25', '14:00:00', '2022-10-25', '16:00:00', 3, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'ALINEAR EL CAMPO DE LUZ DEL COLIMADOR CON EL CAMPO DE RADIACIÓN\nTEST DE COLIMACIÓN Y CAMPO DE RADIACIÓN.\nVERIFICACIÓN DE PERPENDICULARIDAD DE RAYO.\nALINEACIÓN DE COLIMADOR CON BUKY MESA Y BUKY MURAL\nVERIFICAR NIVELES DE MESA Y BUKY MURAL.\nVERIFICACIÓN DE PARÁMETROS BÁSICOS DE FUNCIONAMIENTO (KVP, MA, T. EXPO)\nEXAMINAR CUIDADOSAMENTE EL CABLE DE ALTA TENSIÓN, LOS CONECTORES DE TARJETAS ELECTRÓNICAS, FUENTES DE PODER Y HAND SWICH.\nVERIFICAR LA LÍNEA DE ALIMENTACIÓN Y LA TIERRA.\nVERIFICAR LOS VALORES DE LA FUENTE DE VOLTAJE (AC Y DC)\n', 'MANENER ENCENDIDO EL AIRE ACONDICIONADO ENTRE 18 Y 24 GRADOS', 'NA', 'NA', 'NA', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(56, 19, 1, 'NA', 3, '2022-11-04', '10:00:00', '2022-11-04', '14:00:00', 3, 'MANTENIMIENTO PROGRAMADO', 'SE EVIDENCIA PRESENCIA DE OXIDACION EN LAS TAPAS DE GENERADOR COLUMNA Y MESA', 9, 'NA', 'ALINEAR EL CAMPO DE LUZ DEL COLIMADOR CON EL CAMPO DE RADIACIÓN\nTEST DE COLIMACIÓN Y CAMPO DE RADIACIÓN.\nVERIFICACIÓN DE PERPENDICULARIDAD DE RAYO.\nALINEACIÓN DE COLIMADOR CON BUKY MESA Y BUKY MURAL\n   VERIFICAR NIVELES DE MESA Y BUKY MURAL.\nVERIFICACIÓN DE PARÁMETROS BÁSICOS DE FUNCIONAMIENTO (KVP, MA, T. EXPO)\nEXAMINAR EL CABLE DE ALTA TENSIÓN, LOS CONECTORES DE TARJETAS ELECTRÓNICAS, FUENTES DE PODER Y HAND SWICH.\nVERIFICAR LA LÍNEA DE ALIMENTACIÓN Y LA TIERRA.\nVERIFICAR LOS VALORES DE LA FUENTE DE VOLTAJE (AC Y DC)\n', 'SE RECOMIENDA HACER PINTAR LAS TAPAS CON OXIDO', 'NA', 'MA', 'MN', 'NA', 'Si', 'PENDIENTE HACER PINTAR TAPAS Y CARCASAS', 1, 'FINALIZADO'),
-(57, 23, 1, 'NA', 3, '2022-11-05', '11:00:00', '2022-11-05', '17:00:00', 1, 'MANTENIMIENTO PREVENTIVO PROGRAMADO', 'SELECTOR DE KV MAYOR PRESENTA DESGASTE EN CONTACTOS', 9, 'NA', 'ALINEAR EL CAMPO DE LUZ DEL COLIMADOR CON EL CAMPO DE RADIACIÓN\nTEST DE COLIMACIÓN Y CAMPO DE RADIACIÓN.\nVERIFICACIÓN DE PERPENDICULARIDAD DE RAYO.\nALINEACIÓN DE COLIMADOR CON BUKY MESA Y BUKY MURAL\n   VERIFICAR NIVELES DE MESA Y BUKY MURAL.\nVERIFICACIÓN DE PARÁMETROS BÁSICOS DE FUNCIONAMIENTO (KVP, MA, T. EXPO)\nEXAMINAR EL CABLE DE ALTA TENSIÓN, LOS CONECTORES DE TARJETAS ELECTRÓNICAS, FUENTES DE PODER Y HAND SWICH.\nVERIFICAR LA LÍNEA DE ALIMENTACIÓN Y LA TIERRA.\nVERIFICAR LOS VALORES DE LA FUENTE DE VOLTAJE (AC Y DC)\n', 'SE RECOMIENDA MANTENER ENCENDIDO EL AIRE ACONDICINADO PARA EVITAR LA HUMEDAD EN EL AREA', '1', 'NA', 'SELECTOR DE KV MAYOR', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(58, 20, 6, 'NA', 3, '2022-11-05', '16:00:00', '2022-11-05', '17:00:00', 1, 'DESISTALACION DEL EQUIPO ', 'SE HACEN PRUEBA DE FUNCIONALIDAD Y SE ENCUENTRA OPERANDO NORMALMENTE DENTRO DE SUS PARAMETROS', 2, 'NA', 'SE DESCONECTA GENERADOR DE RX Y SE RETIRA DEL AREA DE SERVICIO\nSE DESCONECTA SOPORTE DE TUBO Y DEJA EL EQUIPO LISTO PARA RETIRO\n\n', 'EL EQUIPO ES RETIRADO DEL SERVICIO POR DECISION DEL PROPIETARIO DEBIDO A BAJA PRODUCTIVIDAD ', 'NA', 'NA', 'NA', 'NA', 'No', 'EQUIPO QUEDA EN BODEGA', 1, 'FINALIZADO'),
-(59, 4, 1, 'NA', 3, '2022-11-08', '09:00:00', '2022-11-08', '12:00:00', 2, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificar y ajustar los frenos de rodamientos, soporte de tubo, tensor de contrapeso y soporte del colimador\nVerificar y ajustar las manijas de bloqueo y asegurarse que no estén sueltas y que cierren de forma manual.\nVerificar las posiciones del pedal\nVerificar funcionamiento de ruedas traseras y delanteras.\n Verificar el campo de luz con el campo de radiación\nCompruebe si el diafragma de doble ranura se puede girar ± 45 °.\nVerificar que el ajuste de formato (cuchillas) sea fácil y suave girando el colimador con perillas de ajuste.\nExaminar cuidadosamente el cable de poder, la clavija, los con', 'NA', 'NA', 'NA', 'NA', 'NA', 'Si', 'NA', 1, 'FINALIZADO'),
-(60, 3, 1, 'NA', 3, '2022-11-08', '15:00:00', '2022-11-08', '16:00:00', 2, 'MANTENIMIENTO PROGRAMADO', 'EL EQUIPO SE ENCUENTRA FUERA DE SERVICIO POR DISPOCISION DE SECRETARIA', 9, 'NA', 'SE HACE LIMPIEZA EXTERNA Y VERIFICACION DE RODAMINEROS Y CLAVIJA DE CABLE DE PODER', 'NO SE HACE VERIFICACION DE PARAMETROS YA QUE EL EQUIPO NO SE PUEDE INTERVENIR POR ENCONTRARSE SELLADO', 'NA', 'NA', 'NA', 'NA', 'No', 'EQUIPO CON SELLO DE SECRETARIA', 1, 'FINALIZADO'),
-(61, 34, 1, 'NA', 3, '2022-11-10', '12:00:00', '2022-11-10', '17:00:00', 1, 'MANTENIMIENTO PROGRAMADO', 'LUZ DE COLIMADOR NO ENCIENDE\nFRENOS DE MESA NO FUNCIONAN', 6, 'NA', 'Verificar y ajustar los frenos de rodamientos de la columna, soporte de tubo y colimador.\nVerificar el estado de las guayas de los tensores de contrapeso\nVerificar la apertura y cierre del colimador\nTest de colimación y campo de radiación.\nVerificación de perpendicularidad de rayo.\nAlineación de colimador con buky mesa y buky mural\nVerificar niveles de mesa y buky mural.\nVerificación de parámetros básicos de funcionamiento (kVp, mA, t. Expo)\n', 'SE HACE CAMBIO DE HALOGENO Y SE AJUSTA COLIMACION', '1', '1', 'HALOGENO 12 V 100W', 'PEDAL PARA ELECTROFRENOS', 'Si', 'PENDIENTE CAMBIO DE PEDAL DE FRENOS DE MESA', 1, 'FINALIZADO');
+INSERT INTO `reporte` (`id_reporte`, `inventario`, `tipo_servicio`, `otro_servicio`, `tipo_asistencia`, `fecha_inicio`, `hora_inicio`, `fecha_final`, `hora_final`, `protocolo_matto`, `motivo_servicio`, `estdo_inicial_equipo`, `problemas_report`, `otro_problema`, `actividad_realizada`, `observa_general`, `cant_repto_utilizados`, `cant_repto_cotizar`, `descrip_repto_utilizados`, `descrip_repto_cotizar`, `tecnico_usuario`, `estatus`) VALUES
+(1, 3, 1, 'NA', 3, '2022-02-07', '08:00:00', '2022-02-07', '12:00:00', 1, 'MANTENIMIENTO PROGRAMADO', 'FUNCIONANDO CORRECTAMENTE', 9, 'NA', 'SE REALIZA MANTENIMIENTO DE ACUERDO A PROTOCOLOS DE FABRICANTE', 'ANEXO PROTOCOLO MANTENIMIENTO', '0', '0', 'N.A', 'N.A', 1, 'FINALIZADO'),
+(2, 7, 1, 'NA', 3, '2022-02-08', '13:00:00', '2022-02-08', '15:00:00', 2, 'Mantenimiento programado', 'Cable de poder de alimentación con blindaje, ', 9, 'NA', 'Se hace mantenimiento deacuerdo a protocolo', 'Se requiere cambio de cable de poder', '0', '5', 'N.A', 'CABLE ENCAUCHETADO 14X3 ', 1, 'FINALIZADO'),
+(3, 5, 1, 'NA', 3, '2022-02-08', '14:00:00', '2022-02-08', '16:00:00', 0, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 5, 'NA', 'SE REALIZA MANTENIMIENTO DE ACUERDO A PROTOCOLO DE FABRICANTE', 'NO PERMITE COMUNICACION ENTRE CONSOLA Y COMPUTADOR DE SERVICIO', '0', '1', 'NA', 'TARJETA D702', 1, 'FINALIZADO'),
+(4, 6, 1, 'NA', 3, '2022-02-08', '08:00:00', '2022-02-08', '12:00:00', 1, 'MANTENIMIENTO PROGRAMADO', 'ERROR DE OVER CON TECNICAS ALTAS', 5, 'NA', 'SE HACE MANTENIMIENTO DE ACUERDO A PROTOCOLO', 'SE HACE AJUSTE DE PARAMETROS KVA Y mAS', '0', '0', 'NA', 'NA', 1, 'FINALIZADO'),
+(5, 9, 4, 'NA', 3, '2022-02-18', '08:00:00', '2022-02-18', '09:00:00', 1, 'ENTREGA DE CR POR CONTINGENCIA', 'SE ENTREGA EN BUEN ESTADO DE FUNCIONAMIENTO', 9, 'NA', 'INSTALACION', 'SE ENTREGAN 4 CHASIS DE 14X17 Y UN 10X12 MAS ACCESORIOS DE ESTACION DE TRABAJO', '0', '0', 'NA', 'NA', 1, 'FINALIZADO'),
+(6, 4, 1, 'NA', 3, '2022-02-10', '14:00:00', '2022-02-10', '16:00:00', 2, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'SE HACE MANTENIMIENTO DE ACUERDO A PROTOCOLO DE FABRICANTE', 'SE HACE VERIFICACION DE PARAMETROS KV Y mAS', '0', '0', 'NA', 'NA', 1, 'FINALIZADO'),
+(7, 3, 2, 'NA', 3, '2022-02-14', '12:00:00', '2022-03-05', '16:00:00', 1, 'EQUIPO PRESENTA ERROR 31 AL DISPARO', 'SE DIAGNOSTICA DAÑO EN MONOBLOQUE', 5, 'NA', 'SE RETIRA MONOBLOQUE DEL SERVICIO PARA SER ANALIZADO Y REPARADO EN LABORATORIO', 'SE HACE CAMBIO DE ACEITE Y VACIÓ , SE HACE LIMPIEZA DE BOBINAS DE FILAMENTO, \nSE ENCONTRO FUGAS DE A', '2', '0', 'ACEITE DIALA S4', 'NA', 1, 'FINALIZADO'),
+(8, 13, 1, 'NA', 3, '2022-03-14', '08:00:00', '2022-03-14', '10:00:00', 2, 'MANTENIMIENTO PROGRAMADO', 'LUZ COLIMADOR INTERMITENTE', 4, 'NA', 'SE HACE MANTENIMIENTO DE ACUERDO A PROTOCOLO', 'SE HACE CAMBIO DE PORTA FUSIBLES Y UN RELEVO', '5', '0', 'PORTAFUSIBLES\nRELEVO DE 24V', 'NA', 1, 'FINALIZADO'),
+(9, 11, 1, 'NA', 3, '2022-03-11', '08:00:00', '2022-03-11', '11:00:00', 3, 'MANTENIMIENTO PROGRAMADO', 'FRENO DE COLUMNA SUELTO', 9, 'NA', 'SE REALIZA MANTENIMIENTO DE ACUERDO A PROTOCOLO\n				\n', 'AJUSTE DE FRENOS DE COLUMNA Y BUKY MESA', '0', '0', 'NA', 'NA', 1, 'FINALIZADO'),
+(10, 14, 4, 'NA', 3, '2022-03-15', '11:00:00', '2022-03-16', '15:00:00', 1, 'TRASLADO DE EQUIPO', 'BUENO', 9, 'NA', 'TRANSPORTE DE EQUIPO DE BOGOTA A SAN ALBERTO ', 'NA', '0', '0', 'NA', 'NA', 1, 'FINALIZADO'),
+(11, 15, 2, 'NA', 3, '2022-03-11', '12:00:00', '2022-03-11', '15:00:00', 1, 'REPARACION DE EQUIPO DAÑO EN TARJETAS D962 Y ', 'ERRORES 6 Y 13', 5, 'NA', 'SE HACE CAMBIO DE FUSIBLES DE BANCO DE CONDENSADORES, CAMBIO DE TARJETA D952 Y D962', 'LOS CONTINUOS DAÑOS DE TARJETA DE CARGA SON OCASIONADOS POR LA FUGA DE CORRIENTE EN LAS ACOMETIDAS E', '1', '0', 'D952\nD962\n20CT', 'NA', 1, 'FINALIZADO'),
+(12, 6, 2, 'NA', 3, '2022-03-01', '08:00:00', '2022-03-05', '22:00:00', 1, 'PRESENTA ERROR 01 Y OVER', 'EQUIPO PRESENTA ERROR AL SELECCIONAR TECNICAS', 5, 'NA', 'SE HACE DIAGNOSTICO CON TARJETAS DE GENERADOR Y CONSOLA.\nSE DIAGNOSTICA DAÑO EN TARJETA DE CONSOLA Y', 'CAMBIAR CONTACTORES DE ENTRADA\nTARJETA DE CONSOLA \nY REPARAR TARJETA DE FUENTES DE GENERADOR', '0', '1', 'NA', 'TARJETA CONSOLA\nTARJETA CPU GENRADOR', 1, 'FINALIZADO'),
+(13, 12, 1, 'NA', 3, '2022-03-14', '14:00:00', '2022-03-14', '15:00:00', 1, 'MANTENIMEINTO PROGRAMADO', 'FRENO DE SOPORTE DE BRAZO PRESENTA DESGASTE', 6, 'NA', 'SE HACE MANTENIMIENTO DE ACUERDO A PROTOCOLO DE FABRICANTE', 'SE HACE AJUSTE DE FRENO DE SOPORTE DE TUBO', '1', '0', 'SEGURO PIN', 'NA', 1, 'FINALIZADO'),
+(14, 16, 5, 'NA', 3, '2022-03-04', '12:00:00', '2022-03-04', '14:00:00', 1, 'DIAGNOSTICO Y COTIZACION DE REPARACION', 'EQUIPO FUERA DE SERVICIO\nFALTA SEGURO DE BRAZ', 5, 'NA', 'SE HICIERON PRUEBAS DE FUNCIONAMIENTO Y EL LAS TECLAS DE CONTROL NO ACTUAN', 'PARA REALIZAR LA REPARACION ES NECESARIO RETIRAR EL EQUIPO COMPLETO DE LA SEDE', '0', '4', 'NA', 'RODAMIENTOS\nSOLDADURA\nTECLADO DE CONSOLA\nSEGU', 1, 'FINALIZADO'),
+(15, 17, 1, 'NA', 3, '2022-03-28', '15:00:00', '2022-03-28', '16:00:00', 1, 'MANTENIMIENTO PROGRAMADO', 'SE EVIDENCIA PERFORACIONES EN LA REJILLA DE I', 4, 'NA', 'SE HACE MANTENIMIENTO DE ACUERDO A PROTOCOLO DE FABRICANTE\nSE HACE LIMPIEZA DE REJILLA DE INTENSIFIC', 'LAS PERFORACIONES DE LA REJILLA DEL INTENSIFICADOR GENERAN ARTIFICIOS EN LA IMAGEN DIFICULTANDO EL D', '0', '1', 'NA', 'REJILLA DE 9 PULGADAS INTENSO', 1, 'FINALIZADO'),
+(16, 18, 2, 'NA', 3, '2022-03-26', '18:00:00', '2022-03-26', '18:30:00', 1, 'SOLICITUD DE CAMBIO DE CÓDIGOS DE BARRAS EN C', 'LOS CÓDIGOS DE BARRAS DE CASSETTES DE MAMOGRA', 5, 'NA', 'SE HACE CAMBIO DE CUATRO CÓDIGOS DE BARRAS PARA LOS CHASIS DE MAMOGRAFIA', 'SE HACE PRUEBAS DE FUNCIONAMIENTO ', '0', '4', 'NA', 'CODIGOS DE BARRA MAMO', 1, 'FINALIZADO'),
+(17, 19, 1, 'NA', 3, '2022-04-09', '08:00:00', '2022-04-09', '12:00:00', 3, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificar del estado del panel de control de mando, tapas, carcasas, tornillería y pintura en genera', 'PINTURA DE SOPORTE DE CHASIS MURAL SE ENCUENTRA DETERIORADA', '0', '0', 'NA', 'NA', 1, 'FINALIZADO'),
+(18, 22, 1, 'NA', 3, '2022-04-09', '14:00:00', '2022-04-09', '16:00:00', 6, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificar temperatura ambiente.\nVerificar estado de monitores, CPU, accesorios del equipo\nVerificaci', 'MANTENER SIEMPRE CON AIRE ACONDICIONADO LA SALA PARA EVITAR DAÑOS POR SOBRECALENTAMIENTO', '0', '1', 'NA', 'cassette 10x12\ncassette 14x17', 1, 'FINALIZADO'),
+(19, 20, 1, 'NA', 3, '2022-04-09', '17:00:00', '2022-04-09', '19:00:00', 1, 'MANTENIMIENTO PROGRAMADO', 'IMAGEN ADQUIRIDA MUESTRA POCA DEFINICION EN L', 10, 'NA', 'LUBRICACION DE RODAMIENTOS Y MOVIMIENTOS DE RECORRIDO PANORAMICO\nVERIFICACION DE COLIMACION\nVERIFICA', 'SE HACE AJUSTE DE CORRIENTES DE TUBO PARA MEJORAR LA DEFINICION DE IMAGEN', '0', '0', 'NA', 'NA', 1, 'FINALIZADO'),
+(20, 21, 1, 'NA', 3, '2022-04-10', '11:00:00', '2022-04-10', '13:00:00', 6, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificación del estado de lámparas de borrado\nLimpieza de colector de imagen\nLimpieza lubricación d', 'MANTENER TEMPERATURA DE ACUERDO A INSTRUCCIONES DE FABRICA PARA EVITAR CALENTAMIENTO DE FUENTE', '0', '0', 'NA', 'NA', 1, 'FINALIZADO'),
+(21, 23, 1, 'NA', 3, '2022-04-10', '08:00:00', '2022-04-10', '12:00:00', 3, 'MANTENIMIENTO PROGRAMADO', 'LUZ DE COLIMADOR NO ENCIENDE', 5, 'NA', 'Verificar el movimiento de transporte de la columna vertical\nVerificar el desplazamiento oblicuo, ve', 'SE ENCONTRO DAÑO DE TARJETA DE TIEMPO DE COLIMADOR\nDAÑO DE SOCKET DE HALOGENO\nDESGASTE EN SELECTOR D', '0', '1', 'NA', 'SOCKET PARA LAMPARA\nTARJETA ELECTRONICA DE TI', 1, 'FINALIZADO'),
+(22, 2, 1, 'NA', 3, '2022-04-12', '09:00:00', '2022-04-12', '10:00:00', 6, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificar del estado de scanner, tapas, carcasas, tornillería y pintura en general.\r\nVerificarlas et', 'NA', '0', '0', 'NA', 'NA', 1, 'FINALIZADO'),
+(23, 1, 1, 'NA', 3, '2022-04-12', '14:00:00', '2022-04-12', '18:00:00', 4, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificar del estado del panel de control de mando, tapas, carcasas, tornillería y pintura en genera', 'MANTENER TEMPERATURA POR DEBAJO DE 22 GRADOS C. PARA EVITAR SOBRECALENTAMIENTOS DE TUBO RX', '0', '0', 'NA', 'NA', 1, 'FINALIZADO'),
+(24, 25, 2, 'NA', 3, '2022-04-19', '08:00:00', '2022-04-19', '09:00:00', 1, 'DESAJUSTE EN TIEMPO DE DISPARO', 'ESTADO MECANICO DEL EQUIPO BUENO\nESTADO ELECT', 5, 'NA', 'SE HACE MEDICIÓN DE TIEMPO DE DISPARO EN VARIAS PARAMETROS Y SE ENCONTRÓ UN DESAJUSTE DE 80%\nSE REAL', 'VALOR  DE REFERENCIA EN SEGUNDOS                 0.05          0.60              0.83            1.0', '0', '0', 'NA', 'NA', 1, 'FINALIZADO'),
+(25, 26, 2, 'NA', 3, '2022-04-19', '10:00:00', '2022-04-19', '11:00:00', 1, 'DESAJUSTE EN TIEMPO DE DISPARO', 'ESTADO MECANICO DEL EQUIPO BUENO\nESTADO ELECT', 5, 'NA', 'SE HACE MEDICIÓN DE TIEMPO DE DISPARO EN VARIAS PARAMETROS Y SE\nENCONTRÓ UN DESAJUSTE DE 20% ENCUANT', 'VALOR DE REFERENCIA EN SEGUNDOS    0.30     0.41     0.60   1.30\nVALOR DE MEDIDA EN MILISEGUNDOS 296', '0', '0', 'NA', 'NA', 1, 'FINALIZADO'),
+(26, 1, 1, 'NA', 3, '2022-04-12', '14:00:00', '2022-04-12', '17:00:00', 4, 'MANTENIMIENTO PROGRAMADOS', 'BUENO', 9, 'NA', 'Verificar y ajustar los, soporte de tubo, tensor de contrapeso, rotación de gantry, desplazamiento y', 'MANTENER EL AIRE ACONDICIONADO PARA EVITAR SOBRECALENTAMIENTOS DE TUBO', '0', '0', 'NA', 'NA', 1, 'FINALIZADO'),
+(27, 2, 1, 'NA', 3, '2022-04-12', '10:00:00', '2022-04-12', '11:00:00', 6, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificar del estado de scanner, tapas, carcasas, tornillería y pintura en general.\nVerificarlas eti', 'NA', '0', '0', 'NA', 'NA', 1, 'FINALIZADO'),
+(28, 8, 2, 'NA', 3, '2022-05-01', '08:00:00', '2022-05-03', '22:10:00', 1, 'EQUIPO PRESENTA ERROR 22 AL DISPARO', 'SE ENCONTRO DAÑO EN EL BANCO DE IGBT DE ALTA ', 5, 'NA', 'SE HACE REEMPLAZO DE MODULOS DE IGBT, REPARACION DE TARJETA DE CONTROL DE DISPARO DE IGBT, Y REPARAC', 'DAÑO OCACIONADO POR SOBRECARGA DE TENSION EN LA RED ELECTRICA', '2', '0', 'BSM300GB120DLC\nFUSIBLE 150A 300VC\nRESISTENCIA', 'NA', 1, 'FINALIZADO'),
+(29, 4, 1, 'NA', 3, '2022-05-07', '09:00:00', '2022-05-07', '12:00:00', 2, 'MANTENIMIENTO PROGRAMADO', 'EQUIPO PRESENTA ROPTURA DE TORNILLO DE TAPA D', 9, 'NA', 'Verificar y ajustar los frenos de rodamientos, soporte de tubo, tensor de contrapeso y soporte del c', 'SE HACE REPARACION DE TAPA DE RUEDA', '0', '0', 'NA', 'NA', 1, 'FINALIZADO'),
+(30, 3, 1, 'NA', 3, '2022-05-07', '15:00:00', '2022-05-07', '17:00:00', 2, 'MANTENIMIENTO PREVENTIVO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificar y ajustar los frenos de rodamientos, soporte de tubo, tensor de contrapeso y soporte del c', 'PRESENTA DAÑO EN LOS AJUSTE DE TORNILLO DE LA TAPA DE TECLADO', '0', '0', 'NA', 'NA', 1, 'FINALIZADO'),
+(31, 27, 2, 'NA', 3, '2022-05-20', '08:30:00', '2022-05-20', '11:00:00', 1, 'REPORTAN DESAJUSTE DE TIEMPO', 'EL EQUIPO NO CUENTA CON DISPLAY DE VISUALIZAC', 5, 'NA', 'SE VERIFICA Y SE JUSTE VALORES DE MA.\nSE HIZO VERIFICACION Y AJUSTE DE TIEMPO CON 9 VALORES PREDETER', 'ES NECESARIO EL CAMBIO DE TEMPORIZADOR YA QUE EL QUE TIENE PRESENTA INESTABILIDAD', '0', '0', 'NA', 'NA', 1, 'FINALIZADO'),
+(32, 6, 2, 'NA', 3, '2022-05-05', '14:00:00', '2022-05-14', '17:00:00', 1, 'SE HACE RETIRO DE GENERADOR PARA REPARACION', 'PRESENTA ERRORES 01- 02 \nNO HACE CONEXION DE ', 1, 'NA', 'SE RETIRA EL EQUIPO DE LA SEDE PARA REPARACION Y PRUEBAS DE LABORATORIO\nCONTACTOS DE ENTRADA DESGAST', 'SE ENTREGA EQUIPO OPERATIVO CON LA CONSOLA FUNCIONANDO CORRECTAMENTE Y SE ESTARA COTIZANDO UNA CONSO', '2', '1', 'CONTACTORES\nFUSIBLES 250 AMP\nRESISTENCIA 60W', 'TECLADO CONSOLA', 1, 'FINALIZADO'),
+(33, 3, 2, 'NA', 3, '2022-05-18', '15:00:00', '2022-05-18', '16:00:00', 1, 'FALLO EN LUZ COLIMADOR', 'LUZ DE COLIMADOR NO ENCIENDE', 1, 'NA', 'SE ENCUENTRA FILAMENTO DE HALOGENO ABIERTO Y SE REMPLAZA', 'NA', '1', '0', 'HALOGENO 24V 150W', 'NA', 1, 'CANCELADO'),
+(34, 3, 2, 'NA', 3, '2022-05-18', '15:00:00', '2022-05-18', '16:00:00', 1, 'FALLO LUZ COLIMADOR', 'LUZ COLIMADOR NO ENCIENDE', 5, 'NA', 'SE ENCONTRO HALOGENO QUEMADO Y SE HACE EL REMPLAZO DE HALOGENO', 'NA', '1', '0', 'HALOGENO 24V 150W', 'NA', 1, 'FINALIZADO'),
+(35, 27, 2, 'NA', 3, '2022-05-20', '08:30:00', '2022-05-20', '11:30:00', 1, 'DESAJUSTE DE TIEMPO DE EXPOSICION ', 'EL EQUIPO NO CUENTA CON DISPLAY DE VISUALIZAC', 5, 'NA', 'SE VERIFICA Y SE JUSTE VALORES DE MA.\nSE HIZO VERIFICACION Y AJUSTE DE TIEMPO CON 9 VALORES\nPREDETER', 'PATRON DE MEDIDA UTILIZADO KVMETER MARCA ECC MODELO 820', '0', '0', 'NA', 'NA', 1, 'FINALIZADO'),
+(36, 7, 2, 'NA', 3, '2022-06-08', '09:00:00', '2022-06-08', '18:00:00', 1, 'DESCONFIGURACION', 'EQUIPO NO SUBE EL SISTEMA', 7, 'NA', 'SE HACE CONFIGURACION DEL SISTEMA SEGUN EL MANUAL DE SERVICIO\nAJUSTE DE CORRIENTES DE TUBO\nAJUSTE DE KV\nAJUSTE DE TIEMPOS\n	60KV	110KV	60KV	110KV\nmA	AJUSTE	AJUSTE	AJUSTE	AJUSTE\n25	2080	2050	2080	2050\n50	2190	2155	2200	2170\n100	2332		2340	\n200	2496			\n', 'SE HIZO AJUSTE UTILIZANDO PATRON DE MEDIDA MODELO ECC 820', 'NA', 'NA', 'NA', 'NA', 1, 'FINALIZADO'),
+(37, 5, 2, 'NA', 3, '2022-05-30', '15:15:00', '2022-06-08', '17:00:00', 1, 'REPORTANFALLA DE CONTROLES', 'FALLA DE CONTROL DE MANDOS DE GANTRY\nFALLA DE POSICIONAMIENTO DE FILTRO', 5, 'NA', 'SE HIZO REVISION DE CONESCTORES, PULSADORES DE CONTROLES DE ROTACION DE GANTRY, SE HACE TEST DE CONDUCTIVIDAD DE CABLES, SE HACE AJUSTE DE POSICIONAMIENTO DE GANTRY', 'SE ENCONTRO CONECTORERS ABIERTOS Y POTENCIOMETRO FUERA DE POSICION\nDAÑO DE MOTOR A PASO DE FILTRO', 'NA', '1', 'NA', 'MOTOR A PASO 12V 52 OHM', 1, 'FINALIZADO'),
+(38, 8, 1, 'NA', 3, '2022-06-03', '08:00:00', '2022-06-03', '14:00:00', 1, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'SE HACE CAMBIO DE RESISTENCIAS DE TARJETA DE POTENCIA DE GENERADOR\nSEHACE CAMBIO DE 4 DISPLAY DE 7 SEGMENTOS DE TECLADO', 'SE VERIFICA Y SE AJUSTA KV Y CORRIENTES DE TUBO\nSE HACE AJUSTE DE FRENOS DE MESA', '4\n10', 'NA', 'DISPLAY DE 7 SEGMENTOS\nRESISTENCIAS 1W', 'NA', 1, 'FINALIZADO'),
+(39, 28, 2, 'NA', 3, '2022-06-16', '11:00:00', '2022-06-17', '12:30:00', 1, 'ATASCO DE PANTALLA Y LECTURA DE CODIGO DE BARRAS', 'BUENO', 5, 'NA', 'SE HACE LIMPIEZA DE SENSOR DE DETECCCION DE LECTURA DE BARRAS\nSE HACE LIMPIEZA DE RODILLOS\nY LUBRICACION DE TORNILLO SINFIN', 'LOS RODILLOS PRESENTAN DESGASTE DE RECUBRIMIENTO QUE HACE QUE LA PANTALLA SE ATASQUE', 'NA', '1', 'NA', 'JUEGO DE RODILLOS', 1, 'FINALIZADO'),
+(40, 1, 1, 'NA', 3, '2022-07-06', '10:00:00', '2022-07-06', '12:00:00', 1, 'MANTENIMIENTO PROGRAMADO', 'BUENO \nCONTADOR DE DISPAROS 173621', 9, 'NA', 'Verificar y ajustar los, soporte de tubo, tensor de contrapeso, rotación de gantry, desplazamiento y compresión de mama.\nVerificar deslizamiento de regilla de buky\nVerificar y ajustar la medición de altura de paleta de compresión\nVerificar y ajustar la medición de fuerza de compresión\nVerificar y ajustar la medición de la angulación de gantry\nVerificar el funcionamiento de pedales de compresión\n Verificar detector de chasis y chasis de magnificación \nVerificar el funcionamiento de filtros\n Comprobar que el localizador del haz de luz del colimador está operado tanto con el panel de control como', 'SE EVIDENCIA VARIOS ERRORES EN EL LOG INTERNO DEVIDO A CAMBIOS DE VOLTAJE DE ENTRADA', 'NA', 'NA', 'NA', 'NA', 1, 'FINALIZADO'),
+(41, 2, 2, 'NA', 3, '2022-07-05', '12:00:00', '2022-07-10', '20:00:00', 1, 'NO CAPTURA IMAGEN ', 'EQUIPO HACE EL PROCESO DE DIGITALIZACION PERO NO MUESTRA LA IMAGEN', 7, 'NA', 'SE HIZO CAMBIO DE CABLE USB Y SE HIZO UNA RESTAURACION DEL SISTEMA PERO SIGUIO IGUAL.\nSE RETIZA EL EQUIPO DE LAS INSTALACIONES PARA INSTALAR SOFTWARE Y APLICATIVO DE CARESTREAM', 'SE RECOMIENDA NO INSTALAR APLICACIONES AJENAS A CARESTREAM', '1', 'NA', 'DISCO DURA 1 T', 'NA', 1, 'FINALIZADO'),
+(42, 3, 1, 'NA', 3, '2022-08-05', '14:08:00', '2022-08-05', '16:09:00', 1, 'MANTENIMIENTO PROGRAMADO', 'TAPA DE TECLADO SUELTA\nFRENOS DESGASTADO', 3, 'NA', 'SE HACE HAJUSTES COLIMACION\nVERIFICACION DE PARAMETROS\n', 'CAMBIO DE CAUCHOS DE FRENOS\nREPARACION DE SOPORTE TORNILLOS DE TAPA', '2', 'NA', 'CAUCHOS FRENO', 'NA', 1, 'FINALIZADO'),
+(43, 4, 1, 'NA', 3, '2022-08-04', '15:00:00', '2022-08-04', '15:20:00', 1, 'MANTENIMIENTO PROGRAMDA', 'BUENO', 9, 'NA', 'TEST DE COLIMACION\nLUBRICACION DE RODAMIENTOS\nVERIFICACION DE PARAMETROS', 'NA', 'NA', 'NA', 'NA', 'NA', 1, 'FINALIZADO'),
+(44, 18, 2, 'NA', 3, '2022-07-27', '02:00:00', '2022-07-27', '06:00:00', 1, 'REPORTAN DESAJUSTE DE IMAGEN', 'IMAGEN SALE CORTADA\nGLAVO SE ENCONTRO SUELTO', 5, 'NA', 'SE HACE AJUSTE DE GALVO\nAJUSTE Y CALIBRACION DE IMAGEN\nAJUSTE Y ALINEACION DE ESPEJOS\nAJUSTE DE UNIDAD OPTICA', 'SE HACEPRUEBAS DEFUNCIONAMIENTO CON DIFERENTES CHASIS', 'NA', 'NA', 'NA', 'NA', 1, 'FINALIZADO'),
+(45, 3, 2, 'NA', 3, '2022-09-08', '10:00:00', '2022-09-08', '13:00:00', 1, 'EQUIPO PRESENTA ERROR 08', 'SOPORTE DE TAPA TUBO SUELTO\n', 5, 'NA', 'SE HACE VERIFICACION DE CONEXIONES \nLIMPIEZA DE CONTACTOS Y VERIFICACION DE PARAMETROS\n', 'SE EVIDENCIA SOBRECARGA EN BANCO DE CONDENSADORES Y TARJETA DE CARGA Y DESCARGA', 'NA', 'NA', 'NA', 'NA', 1, 'FINALIZADO'),
+(46, 2, 2, 'NA', 3, '2022-09-07', '18:00:00', '2022-09-07', '19:00:00', 1, 'NO DIGITALIZA CHASIS DE 10X12', 'PRESENTA ERROR DE DIGITALIZACION CON CHASIS DE 10X12', 6, 'NA', 'SE HACE LIMPIEZA DE RODILLOS\nSE HACE PRUEBAS CON VARIOS CHASIS', 'SE HACE CAMBIO DE CHASIS TAMAÑO 10X12', '2', 'NA', 'CHASIS 10X12', 'NA', 1, 'FINALIZADO'),
+(47, 29, 2, 'NA', 1, '2022-09-16', '12:00:00', '2022-09-19', '17:00:00', 1, 'EQUIPO NO EMITE RX', 'LUZ DE COLOMADOR DIRECTA\nNO HAY EMISION DE RX\nFRENOS DESAJUSTADOS', 5, 'NA', 'SE ENCONTRO DAÑO EN CONTACTOS DEL SELECTOR DE mA EL CUAL SE HACE SU REPARACION\nSE CAMBIA RELEVO DE TEMPORIZADOR DE LUZ COLIMADOR\nSE HACE CAMBIO DE ELECTROFRENOS DE MESA\nSE HACE CAMBIO DEBUKY DEMESA\nSE HACE CAMBIO DE DISPLAY DE TIEMPO', 'SE RECOMIENDA CAMBIAR SELECTOR DE mA\nY AJUSTAR Y VERICAR PARAMETROS PERIODICAMENTE', '1\n2\n1', '1', 'RELEVO 24V DC\nELECTROFRENOS\nTARJETA DE TIEMPO', 'SELECTOR DEE20 AMP 5 PASOS', 1, 'FINALIZADO'),
+(48, 32, 2, 'NA', 3, '2022-08-19', '08:00:00', '2022-08-30', '08:00:00', 1, 'DAÑO ELECTRONICO POR TENSION DE RED', 'SE ENCONTRO CORTOCIRCUITO EN TARJETA D952 Y DESPRENDIMIENTO DE CONDENSADORES EN TARJETA D962\nTARJETA', 1, 'NA', 'SE HACE CAMBIO DE TARJETAS D952 Y D962\nSE VERIFICA CARGA Y DESCARGA DE CONDENSADORES\nSE HACE CALIBRACION DE CORRIENTES Y KV\n', 'SE REVISO LA RED ELECTRICA EN LOS PUNTOS DONDE OCURRIO EL DAÑO Y SE ENCONTRO QUE EL POLO A TIERRA TIENE UNA FUGA DE VOLTAJE DE 40V', '1\n1', 'NA', 'D952\nD962', 'NA', 1, 'FINALIZADO'),
+(49, 31, 1, 'NA', 3, '2022-06-25', '10:00:00', '2022-06-25', '14:00:00', 6, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Limpieza rodillos\nLimpieza y lubricación de tornillos sin fin\nVerificación de fuentes de voltaje\nLimpieza verificación mecánica de cassettes y pantallas\nLimpieza de CPU, monitor teclado u ups\nTest de imagen con phantom para escala de gris \nPruebas de homogeneidad de imagen \nTes de resolución de imagen\n', 'SE APRECIA DESGASTE EN ROTACION DE MODULO OPTICO ', 'NA', '1', 'NA', 'MODULO OPTICO', 1, 'FINALIZADO'),
+(50, 30, 1, 'NA', 3, '2022-06-25', '14:01:00', '2022-06-25', '18:00:00', 3, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'ALINEAR EL CAMPO DE LUZ DEL COLIMADOR CON EL CAMPO DE RADIACIÓN\nTEST DE COLIMACIÓN Y CAMPO DE RADIACIÓN.\nVERIFICACIÓN DE PERPENDICULARIDAD DE RAYO.\nALINEACIÓN DE COLIMADOR CON BUKY MESA Y BUKY MURAL\nVERIFICAR NIVELES DE MESA Y BUKY MURAL.\nVERIFICACIÓN DE PARÁMETROS BÁSICOS DE FUNCIONAMIENTO (KVP, MA, T. EXPO)\nEXAMINAR CUIDADOSAMENTE EL CABLE DE ALTA TENSIÓN, LOS CONECTORES DE TARJETAS ELECTRÓNICAS, FUENTES DE PODER Y HAND SWICH.\nVERIFICAR LA LÍNEA DE ALIMENTACIÓN Y LA TIERRA.\nVERIFICAR LOS VALORES DE LA FUENTE DE VOLTAJE (AC Y DC)\n', 'AJUSTE DE mA EN FOCO DE 200\nAJUSTE DE TIEMPO DE EXPOCISION', 'NA', 'NA', 'NA', 'NA', 1, 'FINALIZADO'),
+(51, 3, 2, 'NA', 3, '2022-09-30', '16:00:00', '2022-09-30', '16:38:00', 1, 'CORRECTIVO', 'NO ENCIENDE LUZ DE COLIMADOR', 5, 'NA', 'SE HACE CAMBIO DE LAMPARA DE COLIMADOR', 'NA', '1', 'NA', 'HALOGENO 24V 150W', 'NA', 1, 'FINALIZADO'),
+(52, 33, 1, 'NA', 3, '2022-10-20', '08:00:00', '2022-10-20', '12:00:00', 3, 'MANTENIMIENTO PROGRAMADO', 'LUZ DE COLIMADOR NO ENCIENDE', 10, 'LUZ COLIMADOR', 'ALINEAR EL CAMPO DE LUZ DEL COLIMADOR CON EL CAMPO DE RADIACIÓN\nTEST DE COLIMACIÓN Y CAMPO DE RADIACIÓN.\nVERIFICACIÓN DE PERPENDICULARIDAD DE RAYO.\nALINEACIÓN DE COLIMADOR CON BUKY MESA Y BUKY MURAL\nVERIFICAR NIVELES DE MESA Y BUKY MURAL.\nVERIFICACIÓN DE PARÁMETROS BÁSICOS DE FUNCIONAMIENTO (KVP, MA, T. EXPO)\nEXAMINAR CUIDADOSAMENTE EL CABLE DE ALTA TENSIÓN, LOS CONECTORES DE TARJETAS ELECTRÓNICAS, FUENTES DE PODER Y HAND SWICH.\nVERIFICAR LA LÍNEA DE ALIMENTACIÓN Y LA TIERRA.\nVERIFICAR LOS VALORES DE LA FUENTE DE VOLTAJE (AC Y DC)\n', 'CAMBIO DE LAMPARA LED DE COLIMADOR', '1', 'NA', 'LAMPARA LED 6V 50W', 'NA', 1, 'FINALIZADO'),
+(53, 2, 1, 'NA', 3, '2022-10-24', '09:00:00', '2022-10-24', '11:00:00', 6, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificar estado de monitores, CPU, accesorios del equipo\nVerificación del estado de lámparas de borrado\nLimpieza de colector de imagen\nLimpieza lubricación de transporte de cassettes\nLimpieza de modulo óptico\nVerificación de fuentes de voltaje\nLimpieza verificación mecánica de cassettes y pantallas\nLimpieza de CPU, monitor teclado u ups\nLimpieza rodillos\nLimpieza y lubricación de tornillos sin fin\nPruebas de homogeneidad de imagen \nTes de resolución de imagen\n', 'NA', 'NA', 'NA', 'NA', 'NA', 1, 'FINALIZADO'),
+(54, 1, 1, 'NA', 3, '2022-10-25', '08:00:00', '2022-10-25', '12:00:00', 4, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificar y ajustar los, soporte de tubo, tensor de contrapeso, rotación de gantry, desplazamiento y compresión de mama.\nVerificar deslizamiento de regilla de buky\nVerificar y ajustar la medición de altura de paleta de compresión\nVerificar y ajustar la medición de fuerza de compresión\nVerificar y ajustar la medición de la angulación de gantry\nVerificar el funcionamiento de pedales de compresión\n Verificar detector de chasis y chasis de magnificación \nVerificar el funcionamiento de filtros\n Comprobar que el localizador del haz de luz del colimador está operado tanto con el panel de control como', 'MANTENER CONSTANTE EL AIRE ACONDICIONADO ', 'NA', 'NA', 'NA', 'NA', 1, 'FINALIZADO'),
+(55, 8, 1, 'NA', 3, '2022-10-25', '14:00:00', '2022-10-25', '16:00:00', 3, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'ALINEAR EL CAMPO DE LUZ DEL COLIMADOR CON EL CAMPO DE RADIACIÓN\nTEST DE COLIMACIÓN Y CAMPO DE RADIACIÓN.\nVERIFICACIÓN DE PERPENDICULARIDAD DE RAYO.\nALINEACIÓN DE COLIMADOR CON BUKY MESA Y BUKY MURAL\nVERIFICAR NIVELES DE MESA Y BUKY MURAL.\nVERIFICACIÓN DE PARÁMETROS BÁSICOS DE FUNCIONAMIENTO (KVP, MA, T. EXPO)\nEXAMINAR CUIDADOSAMENTE EL CABLE DE ALTA TENSIÓN, LOS CONECTORES DE TARJETAS ELECTRÓNICAS, FUENTES DE PODER Y HAND SWICH.\nVERIFICAR LA LÍNEA DE ALIMENTACIÓN Y LA TIERRA.\nVERIFICAR LOS VALORES DE LA FUENTE DE VOLTAJE (AC Y DC)\n', 'MANENER ENCENDIDO EL AIRE ACONDICIONADO ENTRE 18 Y 24 GRADOS', 'NA', 'NA', 'NA', 'NA', 1, 'FINALIZADO'),
+(56, 19, 1, 'NA', 3, '2022-11-04', '10:00:00', '2022-11-04', '14:00:00', 3, 'MANTENIMIENTO PROGRAMADO', 'SE EVIDENCIA PRESENCIA DE OXIDACION EN LAS TAPAS DE GENERADOR COLUMNA Y MESA', 9, 'NA', 'ALINEAR EL CAMPO DE LUZ DEL COLIMADOR CON EL CAMPO DE RADIACIÓN\nTEST DE COLIMACIÓN Y CAMPO DE RADIACIÓN.\nVERIFICACIÓN DE PERPENDICULARIDAD DE RAYO.\nALINEACIÓN DE COLIMADOR CON BUKY MESA Y BUKY MURAL\n   VERIFICAR NIVELES DE MESA Y BUKY MURAL.\nVERIFICACIÓN DE PARÁMETROS BÁSICOS DE FUNCIONAMIENTO (KVP, MA, T. EXPO)\nEXAMINAR EL CABLE DE ALTA TENSIÓN, LOS CONECTORES DE TARJETAS ELECTRÓNICAS, FUENTES DE PODER Y HAND SWICH.\nVERIFICAR LA LÍNEA DE ALIMENTACIÓN Y LA TIERRA.\nVERIFICAR LOS VALORES DE LA FUENTE DE VOLTAJE (AC Y DC)\n', 'SE RECOMIENDA HACER PINTAR LAS TAPAS CON OXIDO', 'NA', 'MA', 'MN', 'NA', 1, 'FINALIZADO'),
+(57, 23, 1, 'NA', 3, '2022-11-05', '11:00:00', '2022-11-05', '17:00:00', 1, 'MANTENIMIENTO PREVENTIVO PROGRAMADO', 'SELECTOR DE KV MAYOR PRESENTA DESGASTE EN CONTACTOS', 9, 'NA', 'ALINEAR EL CAMPO DE LUZ DEL COLIMADOR CON EL CAMPO DE RADIACIÓN\nTEST DE COLIMACIÓN Y CAMPO DE RADIACIÓN.\nVERIFICACIÓN DE PERPENDICULARIDAD DE RAYO.\nALINEACIÓN DE COLIMADOR CON BUKY MESA Y BUKY MURAL\n   VERIFICAR NIVELES DE MESA Y BUKY MURAL.\nVERIFICACIÓN DE PARÁMETROS BÁSICOS DE FUNCIONAMIENTO (KVP, MA, T. EXPO)\nEXAMINAR EL CABLE DE ALTA TENSIÓN, LOS CONECTORES DE TARJETAS ELECTRÓNICAS, FUENTES DE PODER Y HAND SWICH.\nVERIFICAR LA LÍNEA DE ALIMENTACIÓN Y LA TIERRA.\nVERIFICAR LOS VALORES DE LA FUENTE DE VOLTAJE (AC Y DC)\n', 'SE RECOMIENDA MANTENER ENCENDIDO EL AIRE ACONDICINADO PARA EVITAR LA HUMEDAD EN EL AREA', '1', 'NA', 'SELECTOR DE KV MAYOR', 'NA', 1, 'FINALIZADO'),
+(58, 20, 6, 'NA', 3, '2022-11-05', '16:00:00', '2022-11-05', '17:00:00', 1, 'DESISTALACION DEL EQUIPO ', 'SE HACEN PRUEBA DE FUNCIONALIDAD Y SE ENCUENTRA OPERANDO NORMALMENTE DENTRO DE SUS PARAMETROS', 2, 'NA', 'SE DESCONECTA GENERADOR DE RX Y SE RETIRA DEL AREA DE SERVICIO\nSE DESCONECTA SOPORTE DE TUBO Y DEJA EL EQUIPO LISTO PARA RETIRO\n\n', 'EL EQUIPO ES RETIRADO DEL SERVICIO POR DECISION DEL PROPIETARIO DEBIDO A BAJA PRODUCTIVIDAD ', 'NA', 'NA', 'NA', 'NA', 1, 'FINALIZADO'),
+(59, 4, 1, 'NA', 3, '2022-11-08', '09:00:00', '2022-11-08', '12:00:00', 2, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificar y ajustar los frenos de rodamientos, soporte de tubo, tensor de contrapeso y soporte del colimador\nVerificar y ajustar las manijas de bloqueo y asegurarse que no estén sueltas y que cierren de forma manual.\nVerificar las posiciones del pedal\nVerificar funcionamiento de ruedas traseras y delanteras.\n Verificar el campo de luz con el campo de radiación\nCompruebe si el diafragma de doble ranura se puede girar ± 45 °.\nVerificar que el ajuste de formato (cuchillas) sea fácil y suave girando el colimador con perillas de ajuste.\nExaminar cuidadosamente el cable de poder, la clavija, los con', 'NA', 'NA', 'NA', 'NA', 'NA', 1, 'FINALIZADO'),
+(60, 3, 1, 'NA', 3, '2022-11-08', '15:00:00', '2022-11-08', '16:00:00', 2, 'MANTENIMIENTO PROGRAMADO', 'EL EQUIPO SE ENCUENTRA FUERA DE SERVICIO POR DISPOCISION DE SECRETARIA', 9, 'NA', 'SE HACE LIMPIEZA EXTERNA Y VERIFICACION DE RODAMINEROS Y CLAVIJA DE CABLE DE PODER', 'NO SE HACE VERIFICACION DE PARAMETROS YA QUE EL EQUIPO NO SE PUEDE INTERVENIR POR ENCONTRARSE SELLADO', 'NA', 'NA', 'NA', 'NA', 1, 'FINALIZADO'),
+(61, 34, 1, 'NA', 3, '2022-11-10', '12:00:00', '2022-11-10', '17:00:00', 1, 'MANTENIMIENTO PROGRAMADO', 'LUZ DE COLIMADOR NO ENCIENDE\nFRENOS DE MESA NO FUNCIONAN', 6, 'NA', 'Verificar y ajustar los frenos de rodamientos de la columna, soporte de tubo y colimador.\nVerificar el estado de las guayas de los tensores de contrapeso\nVerificar la apertura y cierre del colimador\nTest de colimación y campo de radiación.\nVerificación de perpendicularidad de rayo.\nAlineación de colimador con buky mesa y buky mural\nVerificar niveles de mesa y buky mural.\nVerificación de parámetros básicos de funcionamiento (kVp, mA, t. Expo)\n', 'SE HACE CAMBIO DE HALOGENO Y SE AJUSTA COLIMACION', '1', '1', 'HALOGENO 12 V 100W', 'PEDAL PARA ELECTROFRENOS', 1, 'FINALIZADO'),
+(62, 35, 2, 'NA', 3, '2022-11-23', '10:00:00', '2022-11-23', '11:00:00', 1, 'INSTALACION CONECTOR', 'BUENO', 4, 'NA', 'SE HACE LA INSTALACION UN UN CONECTOR PARA CABLE DE RED EN LA PARTE INFERIOR TRASERA DEL EQUIPO', 'NA', '1', 'NA', 'CONECTOR RJ45', 'NA', 1, 'FINALIZADO'),
+(63, 36, 2, 'NA', 3, '2022-11-24', '14:00:00', '2022-11-24', '15:00:00', 1, 'ERROR DE ADQUISICION EN LA IMAGENES CON BUKY MURAL', 'EL EQUIPO SE ENCUENTRA TRABAJANDO DENTRO DE LOS PARAMATROS NORMALES', 5, 'NA', 'COMO SOLUCION INMEDIATA PARA NO AFECTAR EL SERVICIO ,SE HACE RETIRO DE REGILLA  CON EL FIN DE OBTENER MAS DOSIS EN LA  ADQUISICION DE IMAGEN, SE DEJA LA REGILLA EN LA SALA DE RX', 'SE OBSERVA QUE LA TAPA O PROTECTOR EXTERNO DEL BUKY MURAL EL CUAL ES DE ACRILICO, ES DE UN ESPESOR QUE SUPERA LOS 10 mm HACIENDO QUE HAYA MENOR DOSIS AL MOMENTO DE LA TOMA DE IMAGEN.\nRECOMENDAMOS CAMBIAL LA TAPA PROTECTOR CON UN MATERIAL MAS SUAVE Y DE MENOS ESPESOR\n', 'NA', 'NA', 'NA', 'NA', 1, 'FINALIZADO'),
+(64, 37, 5, 'NA', 3, '2022-11-26', '10:00:00', '2022-11-26', '14:00:00', 1, 'CALIDAD DE IMAGEN Y ERROR DE REGILLA', 'BUENO', 5, 'NA', 'Se realiza verificación de funcionamiento de programa, \nMovimientos de columna, se realiza rotación y disparo en modo manual y automático. \nSe da la indicación de no soltar el pulsador de disparo hasta que el equipo libere la paleta de compresión.\nEquipo no genera ningún código de error. \nVerificación de colimación.\nSe realiza verificación de movimiento de rejilla.\n', 'Es necesario realizar ajuste de movimiento de rejilla para lo cual se sugiere que se coordine con proveedor de digitalizador para ajustar emisión y adquisición  dos equipos', 'NA', 'NA', 'NA', 'NA', 1, 'FINALIZADO'),
+(65, 21, 1, 'NA', 3, '2022-11-05', '08:00:00', '2022-11-05', '10:00:00', 6, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'VERIFICAR ESTADO DE MONITORES, CPU, ACCESORIOS DEL EQUIPO\nVERIFICACIÓN DEL ESTADO DE LÁMPARAS DE BORRADO\nLIMPIEZA DE COLECTOR DE IMAGEN\nLIMPIEZA LUBRICACIÓN DE TRANSPORTE DE CASSETTES\nLIMPIEZA DE MODULO ÓPTICO\nVERIFICACIÓN DE FUENTES DE VOLTAJE\nLIMPIEZA VERIFICACIÓN MECÁNICA DE CASSETTES Y PANTALLAS\nLIMPIEZA DE CPU, MONITOR TECLADO U UPS\nLIMPIEZA RODILLOS\nLIMPIEZA Y LUBRICACIÓN DE TORNILLOS SIN FIN\nPRUEBAS DE HOMOGENEIDAD DE IMAGEN \nTES DE RESOLUCIÓN DE IMAGEN\n', 'SE RECOMIENDA MANTENER Y CONTROLAR LA HUMEDAD Y LA TEMPERATURA DENTRO DE LOS PARAMETROS PARA EVITAR DAÑOS Y AFECTACIONES DEL EQUIPO', 'NA', 'NA', 'NA', 'NA', 1, 'FINALIZADO'),
+(66, 7, 5, 'NA', 3, '2022-12-14', '22:00:00', '2022-12-14', '17:00:00', 1, 'EN OCACIONES EL EQUIPO NO HACE EMICION DE RAYO', 'APARIENCIA EXTERNA Y MECANICA BUENA\nSE ESCUCHA MUCHA FRICCION AL ROTAR EL ANODO', 5, 'NA', 'SE TRATA DE AJUSTAR VALORES DE CORRIENTE Y KILOVOLTAJE PERO NO ES POSIBLE POR QUE EN LA REPETITIBILIDAD DE LA TENSION NOMINAL DEL TUBO HAY UNA DISCREPANCIA DE MAS DEL 50% , Y EN OCACIONES SOBREPASA EL VALOR MAXIMO DEL PATRON DE MEDIDA (OVER LOAD)', 'SE APRECIA DESGASTE EN LA ROTACION DEL ANODO DEL TUBO DE RX POR LO QUE SE RECOMIENDA SU CAMBIO', 'NA', 'NA', 'NA', 'NA', 1, 'FINALIZADO'),
+(67, 16, 5, 'NA', 3, '2022-12-15', '10:00:00', '2022-12-15', '13:00:00', 1, 'DAÑOS MECANICOS Y OPERATIVOS', 'EL EQUIPO ESTA FRENADO Y SUELTA LA TAPA DE SOPORTE DE TUBO', 3, 'NA', 'SE HACE LIMPIEZA DE PANEL DE CONTROL Y SE RESTABLESE LA OPERACION DEL PANEL DE TECNICAS AUTOMATICAS AEC\n', 'SE NECESITA REPARAR Y CAMBIAR TENSORES DE FRENOS DE RUEDAS TRASERAS.\nCAMBIO DE RODAMIENTOS DELANTEROS.\nREPARACION DE TAPA DE SOPORTE DE TUBO\nREPARACION SEGURO DE SOPORTE DE TUBO.\nVERIFICACION Y AJUSTE DE PARAMETROS\n', 'NA', '1\n1\n2', 'NA', 'SEGURO\nTENSOR DE 1 METRO\nPARES DE RODAMIENTOS 2 PULGADAS', 1, 'PENDIENTE'),
+(68, 16, 5, 'NA', 3, '2022-12-15', '10:00:00', '2022-12-15', '13:00:00', 1, 'EVALUACION DE DAÑOS', 'EQUIPO ESTA BLOQUEADO LOS FRENOS\nTAPA DE SOPORTE DE TUBO SUELTA\nCABLE DE ALTA TENSION ROTO', 5, 'NA', 'SE HACE VERIFICACION DE FUNCIONAMIENTO DE PANEL DE CONTROL Y SE HABILITA EL AEC \nSE HACE DIAGNOSTICO DE DAÑOS MECANICOS\n', 'SE NECESITA REPARAR Y CAMBIAR TENSORES DE FRENOS DE RUEDAS TRASERAS.\nCAMBIO DE RODAMIENTOS DELANTEROS.\nREPARACION DE TAPA DE SOPORTE DE TUBO\nREPARACION SEGURO DE SOPORTE DE TUBO.\nVERIFICACION Y AJUSTE DE PARAMETROS\n', 'NA', '1\n2\n1\n1', 'NA', 'TENSOR DE 1 METRO\nPAR DE RODAMIENTOS\nALTA TENSION\nSEGURO', 1, 'FINALIZADO'),
+(69, 2, 1, 'NA', 3, '2023-01-19', '17:00:00', '2023-01-19', '18:00:00', 6, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificación del estado de lámparas de borrado\nLimpieza de colector de imagen\nLimpieza lubricación de transporte de cassettes\nLimpieza de modulo óptico\nVerificación de fuentes de voltaje\nLimpieza verificación mecánica de cassettes y pantallas\nLimpieza de CPU, monitor teclado u ups\nVerificación de batería de CMOS\nLimpieza rodillos\nLimpieza y lubricación de tornillos sin fin', 'MANTENER LIBRE DE OBJETOS LA ENTRADA DE CHASIS', 'NA', 'NA', 'NA', 'NA', 1, 'FINALIZADO'),
+(70, 2, 1, 'NA', 3, '2023-01-19', '17:00:00', '2023-01-19', '18:00:00', 6, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificación del estado de lámparas de borrado\nLimpieza de colector de imagen\nLimpieza lubricación de transporte de cassettes\nLimpieza de modulo óptico\nVerificación de fuentes de voltaje\nLimpieza verificación mecánica de cassettes y pantallas\nLimpieza de CPU, monitor teclado u ups\nVerificación de batería de CMOS\nLimpieza rodillos\nLimpieza y lubricación de tornillos sin fin\n\n', 'EVITAR COLOCAR OBEJTOS EN LA ENTRADA DEL CHASIS', 'NA', 'NA', 'NA', 'NA', 1, 'FINALIZADO'),
+(71, 2, 1, 'NA', 3, '2023-01-19', '17:00:00', '2023-01-19', '18:00:00', 1, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificación del estado de lámparas de borrado\nLimpieza de colector de imagen\nLimpieza lubricación de transporte de cassettes\nLimpieza de modulo óptico\nVerificación de fuentes de voltaje\nLimpieza verificación mecánica de cassettes y pantallas\nLimpieza de CPU, monitor teclado u ups\nVerificación de batería de CMOS\nLimpieza rodillos\nLimpieza y lubricación de tornillos sin fin', 'NO COLOCAR OBJETOS EN LA ENTRADA DEL CHASIS', 'NA', 'NA', 'NA', 'NA', 1, 'FINALIZADO'),
+(72, 38, 5, 'NA', 3, '2023-01-15', '10:00:00', '2023-01-19', '12:32:00', 1, 'DIAGNOSTICO', 'EQUIPO NO AUTORIZA ROTACION\nEL ENCENDIDO ES INTERMITENTE Y NO ENCIENDE', 5, 'NA', 'SE HACEN PRUEBAS CON TARJETAS HT CONTROL Y ', 'NA', '3', 'NA', 'HT CONTROL BOARD', 'NA', 1, 'PENDIENTE'),
+(73, 39, 6, 'NA', 3, '2023-01-17', '10:00:00', '2023-01-20', '19:00:00', 1, 'DESISTALACION Y TRASLADO DE EQUIPO POR FINALIZACION DE CONTRATO Y CAMBIO DE PROV', 'SE HACEN PRUEBAS DE ENCENDIDO Y FUNCIONAMIENTO EN CUANTO A HARDWARE Y SOFTWARE, CALENTAMIENTO DE TUB', 10, 'NA', 'SE HACE LA DESCONEXION Y DESISTALACION DE MESA, GANTRY, UPS, COOPUTADORES MONITOR TECLADO Y MAUSE, TABLERO ELECTRICO CON SU SISTEMA DE POTENCIA BREAK,  CONTACTOR Y SISTEMA DE CONTROL ACCESORIOS ( SOPORTE DE CABEZA, COLCHONETA)', 'EL EQUIPO Y SUS ACCESORIOS ES TRASLADADO Y ENTREGADO EN EL AREA ASIGNADA POR EL ING GIUSSEPE ROA EN LA CALLE 115 #55B-38 DIAGNOSTICA IPS', '1\n1', 'NA', 'KIT DE RUEDAS GANTRY\nBARRA DE SEGURIDAD GANTRY', 'NA', 1, 'FINALIZADO'),
+(74, 38, 5, 'NA', 3, '2023-01-16', '10:00:00', '2023-01-19', '12:23:00', 1, 'DIAGNOSTICO', 'EQUIPO NO AUTORIZA DISPARO\n EN OCACIONES NO ENCIENDE', 5, 'NA', 'SE HICIERON  PRUEBAS CON DIFERENTES  TARJETAS HT CONTROL Y EL EQUIPO SIGUE CON EL MISMO ERROR\nY SE HACE PRUEBAS CON TARJETA HT CONTROL DE EQUIPO PORTATIL QUE SE ENCUENTRA EN EL AREA Y EL EQUIPO RESPONDE BIEN', 'TRAMBIEN SE ENCONTRO DAÑO EN LA TARJETA DE ARRANQUE E INICIO DE SISTEMA', 'NA', 'NA', 'NA', 'NA', 1, 'FINALIZADO'),
+(75, 38, 5, 'NA', 3, '2023-01-15', '10:00:00', '2023-01-19', '12:00:00', 1, 'DIAGNOSTICO', 'PRESENTA FALLA EN EL ENCENDIDO\nNO AUTORIZA ROTACION Y DISPARO', 5, 'NA', 'SE HACE DIAGNOSTICO CON 3 TARJETAS HT CONTROL DIFERENTES CON LA MISMA REFERENCIA Y EL EQUIPO PRESENTA EL MISMO ERROR\nSE HACE CAMBIO CON TARJETA DE PORTATIL DE RX QUE SE ENCUANTRA EN LA MISMA SEDE Y EL EQUIPO FUNCIONA BIEN.', 'FALLA EN TARJETA INTERFACE CONTROL\nFALLA EN TARJETA HT CONTROL', 'NA', 'NA', 'NA', 'NA', 1, 'FINALIZADO'),
+(76, 3, 1, 'NA', 3, '2023-02-14', '14:00:00', '2023-02-14', '16:00:00', 2, 'MANTENIMIENTO PROGRAMADO', 'BUENO', 9, 'NA', 'Verificar y ajustar los frenos de rodamientos, soporte de tubo, tensor de contrapeso y soporte del colimador\nRealizar la limpieza de los rodamientos, dejando una película muy pequeña en las guías.\nVerificar y ajustar las manijas de bloqueo y asegurarse que no estén sueltas y que cierren de forma manual.\nVerificar funcionamiento de ruedas traseras y delanteras.\n Verificar el campo de luz con el campo de radiación\n Compruebe si el diafragma de doble ranura se puede girar ± 45 °.\nVerificar que el ajuste de formato (cuchillas) sea fácil y suave girando el colimador con perillas de ajuste.\nComproba', 'NA', 'NA', 'NA', 'NA', 'NA', 1, 'FINALIZADO'),
+(77, 40, 7, 'NA', 3, '2023-02-17', '11:00:00', '2023-02-17', '00:00:00', 1, 'RETIRO DE REPUESTO EN CALIDAD DE PRESTAMO', 'BUENO', 9, 'NA', 'SE HACE RETIRO DE TARJETA ELECTRONICA DEL EQUIPO DE RX CON NUMERO DE PARTE HS-D3 EN CALIDAD DE PRESTAMO', 'LA INTERVENCION SE HACE BAJO LA SUPERVISION DEL INGENIERO BIOMEDICO DE TURNO', 'NA', 'NA', 'NA', 'NA', 1, 'FINALIZADO'),
+(78, 41, 2, 'NA', 3, '2023-02-21', '15:00:00', '2023-02-21', '17:00:00', 1, 'EQUIPO PRESENTA ERROR 200\nCAMBIO DE TARJETA 5KW POWER', 'LA TOMA ELECTRICA DE PARED SE ENCUENTRA FLOJA Y NO HACE BUEN CONTACTO CON LA CLAVIJA DEL EQUIPO', 5, 'NA', 'SE HACE CAMBIO DE TARJETA 5KW POWER\nSE VERIFICA PARAMETROS\nSE HACEN PRUEBAS DE FUNCIONAMIENTO', 'SE RECOMIENTA LA IMPLEMENTACION DE UN TOMA CON 220VA \nREVISAR PERIODICAMENTE EL AJUSTE DE LA TOMA Y LA CLAVIJA', '1 ', 'NA', '5KW POWER', 'NA', 1, 'FINALIZADO');
 
 -- --------------------------------------------------------
 
@@ -617,7 +674,10 @@ INSERT INTO `sede` (`id_sede`, `nombre_sede`, `estatus_sede`) VALUES
 (21, 'HOSPITAL DEPARTAMENTAL SAN RAFAEL ESE DE ZARZ', 'ACTIVO'),
 (22, 'HOSPITAL AGUA DE DIOS', 'ACTIVO'),
 (23, 'CLINICA PEDIATRICA COLSANITAS', 'ACTIVO'),
-(24, 'CENTRO MEDICO EPS SANITAS', 'ACTIVO');
+(24, 'CENTRO MEDICO EPS SANITAS', 'ACTIVO'),
+(25, 'AVA DUITAMA', 'ACTIVO'),
+(26, 'CENTRAL DE URGENCIAS TOBERIN', 'ACTIVO'),
+(27, 'CENTRO MEDICO MANIZALES', 'ACTIVO');
 
 -- --------------------------------------------------------
 
@@ -736,10 +796,11 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellidos`, `email`, `identificacion`, `telefono`, `direccion`, `contrasena`, `tipo_usu`, `estatus_usu`) VALUES
-(1, 'HENRY ', 'MEJIA ROSERO', 'hmtecbiomedica@gmail.com', '87712709', '3103816871', 'Carrera 28 # 41 - 24 Sur Barrio Ingles', 'H87712709', 1, 'ACTIVO'),
-(2, 'YULIAN', 'ARDILA MALDONADO', 'ardimal1991@hotmail.com', '1090440261', '3203267159', 'Carrera 12D # 22B - 88 Sur Barrio San Jose', 'Y1090440261', 1, 'ACTIVO'),
+(1, 'HENRY R', 'MEJIA R', 'soporte@hysequipos.com', '87712709', '3103816871', 'Carrera 28 # 41 - 24 Sur Barrio Ingles', 'H87712709', 1, 'ACTIVO'),
+(2, 'YULIAN', 'ARDILA MALDONADO', 'ardimal1991@hotmail.com', '1090440261', '3203267159', 'Carrera 12D # 22B - 88 Sur', 'Y1090440261', 1, 'ACTIVO'),
 (3, 'Yulian ', 'Ardila Maldonado', 'ardimal1991@hotmail.com', '12345678', '320326334', 'CALLE # 55B-38 ILARCO, BOGOTA D.C', '1234', 4, 'ACTIVO'),
-(4, 'Yulian ', 'Ardila Maldonado', 'ardimal1991@hotmail.com', '1453677669', '4534545', 'CALLE 115 # 55B-38 ILARCO, BOGOTA D.C', '1234', 3, 'ACTIVO');
+(4, 'Yulian ', 'Ardila Maldonado', 'ardimal1991@hotmail.com', '1453677669', '4534545', 'CALLE 115 # 55B-38 ILARCO, BOGOTA D.C', '1234', 3, 'ACTIVO'),
+(5, 'LUZ', 'VARGAS', 'suscripcionessic@gmail.com', '87713764', '3224679900', 'CASANARE', '123456', 4, 'ACTIVO');
 
 --
 -- Índices para tablas volcadas
@@ -761,8 +822,7 @@ ALTER TABLE `ciudad`
 -- Indices de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`id_cliente`),
-  ADD KEY `select_contacto_idx` (`nombre_contacto`);
+  ADD PRIMARY KEY (`id_cliente`);
 
 --
 -- Indices de la tabla `cronograma`
@@ -871,43 +931,43 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `area`
 --
 ALTER TABLE `area`
-  MODIFY `id_area` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_area` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `ciudad`
 --
 ALTER TABLE `ciudad`
-  MODIFY `id_ciudad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_ciudad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `cronograma`
 --
 ALTER TABLE `cronograma`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT de la tabla `detalle_reporte`
 --
 ALTER TABLE `detalle_reporte`
-  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT de la tabla `equipo`
 --
 ALTER TABLE `equipo`
-  MODIFY `id_equipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_equipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT de la tabla `inventario`
 --
 ALTER TABLE `inventario`
-  MODIFY `id_inventario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_inventario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT de la tabla `pais`
@@ -931,13 +991,13 @@ ALTER TABLE `protocolo_matto`
 -- AUTO_INCREMENT de la tabla `reporte`
 --
 ALTER TABLE `reporte`
-  MODIFY `id_reporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id_reporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT de la tabla `sede`
 --
 ALTER TABLE `sede`
-  MODIFY `id_sede` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_sede` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de la tabla `solicitud`
@@ -967,7 +1027,7 @@ ALTER TABLE `tipo_usuario`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
